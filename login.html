@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    <title>Log In</title>
+</head>
+<body>
+    <center>
+    <div class = "header">
+            <img src="{{url_for('static', filename='images/logo.png')}}" id="logo">
+            <h1>Bike Shop</h1>
+    </div>
+    <center>
+
+{% if error == "faillogin" %}
+
+    <div class="errormessage">
+        Incorrect username or password
+    </div>
+{% endif %}
+
+{% if error == 'thanks' %}
+
+    <div class="thanks">
+        <h2 class="thanks">Your order was completed, thank you!</h2>
+    </div>
+{% endif %}
+
+    <div class="back">
+        <h1>Log-In</h1>
+        <form action="/" method="post" name="signupForm">
+            <p class="inputLabel">Enter Username:</p>
+            <input name="username" type="text" placeholder="Username_1" required/>
+            <p class="inputLabel">Create Password:</p>
+            <input name="password" type="text" placeholder="P455word!" required/>
+            <br/>
+            <button type="submit" id="submit">Log In</button>
+            </div>
+            <br/>
+            <p>Don't have an account?</p>
+            <a href="register">Sign Up Here</a>
+        </form>
+        <br /><br />
+        <p id="copyright">
+            © The Bike Shop
+        </p>
+    </div>
+</body>
+</html>
