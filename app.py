@@ -1,3 +1,4 @@
+
 from flask import Flask,render_template,request,redirect, session,url_for
 import psycopg2
 
@@ -82,5 +83,8 @@ def shop():
     return render_template("shop.html")
 
 
+
+
 if __name__ == '__main__':
+
    app.run(debug=True)
