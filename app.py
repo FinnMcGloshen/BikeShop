@@ -1,4 +1,3 @@
-
 from flask import Flask,render_template,request,redirect, session,url_for
 import psycopg2
 
@@ -33,8 +32,8 @@ def registers():
         user1 = request.form['username']
         pass1 = request.form['password']
         email1 = request.form['email']
-        if [in_user, in_pass] not in users:
-            curr.execute("INSERT INTO users (name, username, password, email) VALUES (%s, %s, %s, %s)", [name1, user1, pass1, email1])
+        if [user1, pass1] not in users:
+            curr.execute("INSERT INTO bikeproject (name, username, password, email) VALUES (%s, %s, %s, %s)", [name1, user1, pass1, email1])
             conn.commit()
             
             curr.close()
@@ -55,7 +54,7 @@ def logins():
     conn = get_db_connection()
     curr = conn.cursor()
 
-    curr.execute("SELECT username, password FROM users")
+    curr.execute("SELECT username, password FROM bikeproject")
     users = curr.fetchall()
 
     if request.method == 'POST':
@@ -63,9 +62,9 @@ def logins():
         pass1 = request.form['password']
 
         if (user1, pass1) in users:
-            curr.execute("SELECT name FROM users WHERE username = %s AND password = %s", [user1, pass1])
+            curr.execute("SELECT name FROM bikeproject WHERE username = %s AND password = %s", [user1, pass1])
             name = curr.fetchone()
-            curr.execute("SELECT email FROM users WHERE username = %s AND password = %s", [user1, pass1])
+            curr.execute("SELECT email FROM bikeproject WHERE username = %s AND password = %s", [user1, pass1])
             email = curr.fetchone()
 
             active_user = [name[0], user1, pass1, email[0]]
@@ -80,7 +79,7 @@ def logins():
 
 @app.route("/shop")
 def shop():
-    return render_template("shop.html")
+    return render_template("prebuilt.html")
 
 
 
