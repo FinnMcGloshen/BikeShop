@@ -8,31 +8,20 @@ html{
 }
 body{
     border: 2px solid black;
-    padding-top: -5%;
-    /* margin-top: -1%; */
+    padding-bottom: 1%;
     
 }
-.back{
-    margin-bottom: -5%;
-    
-}
-.loginbtn{
+.signupbtn{
     border: 1px solid black;
     border-radius: 20px;
     padding: 5px;
 }
-.regform{
+.loginform{
     border: 2px solid black;
     margin-left: 40%;
     margin-right: 40%;
-    padding-bottom: .5%;
-    margin-bottom: 3%;
-    margin-top: -1.5%;
+    padding-bottom: 3%;
     
-}
-.header{
-    margin-top: -1%;
-    margin-bottom: -0.5%;
 }
 .input{
     background-color: transparent;
