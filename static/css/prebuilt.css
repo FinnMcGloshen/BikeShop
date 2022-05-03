@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    font-family: Raleway;
+    color: #2b2a2a;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background-color: #BCF4F5;
+}
+#menuhead{
+    font-family: "Trebuchet MS", sans-serif;
+    text-transform: uppercase;
+}
+.nav ul {
+    margin: 0;
+}
+
+.nav li {
+    display: inline;
+}
+
+.nav a {
+    display: inline-block;
+    padding: .5em;
+    color:#812e2e;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.main-nav {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: lighter;
+    border-bottom: 1px solid #9c4e4e
+}
+
+.main-nav li {
+    padding: 0 5%;
+}
+
+.nav a:hover {
+    background-color: #656464
+}
+
+.main-header {
+    background-color: #919191;
+    background-image: url("Images/Header Background.jpg");
+    background-blend-mode: multiply;
+    background-size: cover;
+    padding-bottom: 30px;
+}
+
+.menu {
+    text-align: center;
+    margin: 0;
+    font-size: 4em;
+    font-family: "Booter - Zero Zero";
+    font-weight: normal;
+    color: black;
+    margin-bottom: 2%;
+    
+}
+
+.menu-large {
+    font-size: 8em;
+}
+
+.content-section {
+    margin: 1em;
+}
+
+.container {
+    max-width: 75%;
+    margin: 0 auto;
+    padding: 0 1.5em;
+    background-color: white;
+}
+.section-header {
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 4em;
+    letter-spacing: -2px;
+    border-bottom: 2px solid black;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: black;
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+.btn {
+    text-align: center;
+    vertical-align: middle;
+    padding: .67em .67em;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-header {
+    margin: .5em 15% 2em 15%;
+    color: white;
+    border: 2px solid #8d0000;
+    background-color: #2b2a2a;
+    border-radius: 0;
+    font-size: 1.5em;
+    font-weight: lighter;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+
+.btn-play {
+    display: block;
+    margin: 0 auto;
+    color: #8d0000;
+    font-size: 4em;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    text-align: center;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #272727;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.shop-item{
+    text-align: center;
+}
+
+
+.shop-item-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+    margin-bottom: 15px;
+    margin-top: 10%;
+}
+
+.shop-item-image {
+    height: 250px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.shop-item-details {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: space-evenly;
+    width: 75%;
+    
+}
+
+.shop-item-price {
+    color: black;
+    font-weight: 600;
+    padding-left: 100px;
+}
+
+.shop-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
