@@ -7,9 +7,9 @@ app.secret_key = 'JMnQZxe1IdA8MUIjUNAcm6PbiXaftmjC0cJRK3sO'
 def get_db_connection():
    conn = psycopg2.connect(
    host = 'localhost',
-   database = 'X',
+   database = 'flask_db',
    user = 'postgres',
-   password = 'pgadmin'
+   password = '8010199'
    )
 
    return conn
