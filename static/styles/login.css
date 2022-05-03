@@ -4,7 +4,7 @@
     
 }
 html{
-    background-image: linear-gradient(mediumturquoise,seagreen);
+    background-color: #BCF4F5;
 }
 body{
     border: 2px solid black;
@@ -21,6 +21,7 @@ body{
     margin-left: 40%;
     margin-right: 40%;
     padding-bottom: 3%;
+    background-color: white;
     
 }
 .input{
@@ -38,5 +39,5 @@ body{
 }
 #submit:hover{
     background-color: black;
-    color: mediumaquamarine;
+    color: white;
 }
