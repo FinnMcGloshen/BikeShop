@@ -4,7 +4,7 @@
     
 }
 html{
-    background-image: linear-gradient(mediumturquoise,seagreen);
+   background-color: #BCF4F5;
 }
 body{
     border: 2px solid black;
@@ -16,7 +16,7 @@ body{
     margin-bottom: -5%;
     
 }
-.loginbtn{
+.regbtn{
     border: 1px solid black;
     border-radius: 20px;
     padding: 5px;
@@ -28,6 +28,7 @@ body{
     padding-bottom: .5%;
     margin-bottom: 3%;
     margin-top: -1.5%;
+    background-color: white;
     
 }
 .header{
@@ -49,5 +50,5 @@ body{
 }
 #submit:hover{
     background-color: black;
-    color: mediumaquamarine;
+    color: white;
 }
