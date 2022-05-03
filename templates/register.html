@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/register.css') }}">
     <title>Sign Up</title>
 </head>
 <body>
@@ -24,7 +24,7 @@
     
     <div class="back">
         <h1>Register</h1>
-        <form action="{{ url_for('register')}}" method="post" name="signupForm">
+        <form action="{{ url_for('register')}}" method="post" name="signupForm" class="regform">
             <p class="inputLabel">Enter Name:</p>
             <input name="name" type="text" placeholder="Name" required/>
             <p class="inputLabel">Enter Email:</p>
@@ -34,16 +34,17 @@
             <p class="inputLabel">Create Password:</p>
             <input name="password" type="text" placeholder="Password" required/>
             <br/>
+            <br>
             <button type="submit" id="submit">Sign Up</button>
             </div>
             <br/>
             <p>Already have an account?</p>
-            <a href="/">Login Here</a>
+            <a href="/" class="loginbtn">Login Here</a>
         </form>
-        <br /><br />
-        <!-- <p id="copyright">
+       
+        <p id="copyright">
             © The Bike Shop
-        </p> -->
+        </p>
     </div>
 </body>
 </html>
