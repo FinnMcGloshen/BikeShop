@@ -15,13 +15,6 @@
     </div>
     <center>
 
-{% if error == "faillogin" %}
-
-    <div class="errormessage">
-        Incorrect username or password
-    </div>
-{% endif %}
-
 {% if error == 'thanks' %}
 
     <div class="thanks">
@@ -41,6 +34,13 @@
             <br>
             <button type="submit" id="submit">Log In</button>
             </div>
+            {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            {{message}}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
             <br/>
             <p>Don't have an account?</p>
             <br>
