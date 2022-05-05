@@ -37,6 +37,8 @@
             <br>
             <button type="submit" id="submit">Sign Up</button>
             </div>
+            <br/>
+            <div class="errormessage">
             {% with messages = get_flashed_messages() %}
     {% if messages %}
         {% for message in messages %}
@@ -44,7 +46,7 @@
         {% endfor %}
     {% endif %}
 {% endwith %}
-            <br/>
+</div>
             <p>Already have an account?</p>
             <a href="/" class="regbtn">Login Here</a>
         </form>

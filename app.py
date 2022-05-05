@@ -32,7 +32,12 @@ def registers():
         user1 = request.form['username']
         pass1 = request.form['password']
         email1 = request.form['email']
-        if [user1, pass1] in users:
+        # user2 = "'"+user1+"'"
+        # pass2 = "'"+pass1+"'"
+        key = (user1,pass1)
+        if key not in users:
+            print(key)
+            print(users)
             print('making new account')
             curr.execute("INSERT INTO bikeproject (name, username, password, email) VALUES (%s, %s, %s, %s)", [name1, user1, pass1, email1])
             conn.commit()
@@ -40,7 +45,7 @@ def registers():
             curr.close()
             conn.close()
             return redirect(url_for('login'))
-        elif [user1,pass1] not in users:
+        elif key in users:
             print('account already exists')
             curr.close()
             conn.close()
