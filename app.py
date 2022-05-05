@@ -81,9 +81,15 @@ def logins():
             curr.close()
             conn.close()
             return redirect(url_for('shop'))
+        elif user1=='admin' and pass1 == 'admin':
+            return redirect(url_for('manager'))
         else:
             flash('Incorrect Username or Password')
             return redirect(url_for('login',error='noaccount'))
+
+@app.route("/manager")
+def manager():
+    return render_template('manager.html')
 
 
 @app.route("/shop")

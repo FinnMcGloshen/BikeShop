@@ -171,3 +171,9 @@ html, body {
     justify-content: space-evenly;
 }
 
+.managerheader{
+    text-align: center;
+    font-family: sans-serif;
+    font-size: xx-large;
+    color: black;
+}
