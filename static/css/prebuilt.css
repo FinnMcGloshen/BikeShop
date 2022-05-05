@@ -45,14 +45,6 @@ html, body {
     background-color: #656464
 }
 
-.main-header {
-    background-color: #919191;
-    background-image: url("Images/Header Background.jpg");
-    background-blend-mode: multiply;
-    background-size: cover;
-    padding-bottom: 30px;
-}
-
 .menu {
     text-align: center;
     margin: 0;
@@ -77,6 +69,8 @@ html, body {
     margin: 0 auto;
     padding: 0 1.5em;
     background-color: white;
+    border: 2px solid black;
+    margin-bottom: 3%;
 }
 .section-header {
     font-family: "Trebuchet MS", sans-serif;
@@ -90,13 +84,13 @@ html, body {
     padding-top: 10px;
 }
 
-
 .btn {
     text-align: center;
     vertical-align: middle;
     padding: .67em .67em;
     cursor: pointer;
     text-decoration: none;
+    margin-top: 5%;
 }
 
 .btn-header {
@@ -134,8 +128,10 @@ html, body {
 
 .shop-item{
     text-align: center;
+    border: 2px solid black;
+    width: 35%;
+    margin-top: 5%;
 }
-
 
 .shop-item-title {
     display: block;
@@ -160,17 +156,18 @@ html, body {
     padding: 5px;
     justify-content: space-evenly;
     width: 75%;
-    
 }
 
 .shop-item-price {
     color: black;
     font-weight: 600;
-    padding-left: 100px;
+    
 }
+
 
 .shop-items {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+

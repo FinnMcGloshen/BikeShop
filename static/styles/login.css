@@ -41,3 +41,15 @@ body{
     background-color: black;
     color: white;
 }
+.loginbtn{
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 5px;
+}
+.loginbtn:hover{
+    background-color: black;
+    color: #BCF4F5;
+}
+.errormessage{
+    color: black;
+}

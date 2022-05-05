@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,redirect, session,url_for
+from flask import Flask,render_template,request,redirect, session,url_for, flash
 import psycopg2
 
 app = Flask(__name__)
@@ -7,15 +7,15 @@ app.secret_key = 'JMnQZxe1IdA8MUIjUNAcm6PbiXaftmjC0cJRK3sO'
 def get_db_connection():
    conn = psycopg2.connect(
    host = 'localhost',
-   database = 'flask_db',
+   database = 'X',
    user = 'postgres',
-   password = '8010199'
+   password = 'pgadmin'
    )
 
    return conn
 
 @app.route("/register")
-def register(error =None):   
+def register(error=None):   
     return render_template("register.html", error=error)
 
 @app.route("/register", methods=["POST"])
@@ -32,21 +32,29 @@ def registers():
         user1 = request.form['username']
         pass1 = request.form['password']
         email1 = request.form['email']
-        if [user1, pass1] not in users:
+        # user2 = "'"+user1+"'"
+        # pass2 = "'"+pass1+"'"
+        key = (user1,pass1)
+        if key not in users:
+            print(key)
+            print(users)
+            print('making new account')
             curr.execute("INSERT INTO bikeproject (name, username, password, email) VALUES (%s, %s, %s, %s)", [name1, user1, pass1, email1])
             conn.commit()
             
             curr.close()
             conn.close()
             return redirect(url_for('login'))
-        else:
+        elif key in users:
+            print('account already exists')
             curr.close()
             conn.close()
+            flash('Account already exists')
             return redirect(url_for('register',error='existingaccount'))
 
 @app.route("/")
-def login():
-    return render_template("login.html")
+def login(error = None):
+    return render_template("login.html",error=error)
 
 @app.route("/", methods=["POST", "GET"])
 def logins():
@@ -74,7 +82,8 @@ def logins():
             conn.close()
             return redirect(url_for('shop'))
         else:
-            return redirect(url_for('login',error='faillogin'))
+            flash('Incorrect Username or Password')
+            return redirect(url_for('login',error='noaccount'))
 
 
 @app.route("/shop")
@@ -86,8 +95,5 @@ def shop():
     return render_template("Customize.html")
 
 
-
-
 if __name__ == '__main__':
-
    app.run(debug=True)
