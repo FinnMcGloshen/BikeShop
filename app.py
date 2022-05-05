@@ -91,7 +91,7 @@ def shop():
     return render_template("prebuilt.html")
 
 @app.route("/Customize")
-def shop():
+def cust():
     return render_template("Customize.html")
 
 
