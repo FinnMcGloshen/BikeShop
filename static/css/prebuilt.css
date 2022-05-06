@@ -117,6 +117,10 @@ html, body {
     padding: 0;
     text-align: center;
 }
+.btn-primary:hover{
+    color: black;
+    background-color: lightblue;
+}
 
 .btn-primary {
     color: white;
@@ -124,6 +128,7 @@ html, body {
     border: none;
     border-radius: .3em;
     font-weight: bold;
+    border: 2px solid black;
 }
 
 .shop-item{
@@ -169,11 +174,4 @@ html, body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-}
-
-.managerheader{
-    text-align: center;
-    font-family: sans-serif;
-    font-size: xx-large;
-    color: black;
 }
