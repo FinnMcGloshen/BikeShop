@@ -159,8 +159,8 @@ html, body {
     display: flex;
     align-items: center;
     padding: 5px;
-    justify-content: space-evenly;
-    width: 75%;
+    justify-content: center;
+    width: 100%;
 }
 
 .shop-item-price {
