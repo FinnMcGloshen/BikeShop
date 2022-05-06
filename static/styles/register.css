@@ -1,0 +1,61 @@
+*{
+    font-family: sans-serif;
+    color: black;
+    
+}
+html{
+   background-color: #BCF4F5;
+}
+body{
+    border: 2px solid black;
+    padding-top: -5%;
+    /* margin-top: -1%; */
+    
+}
+.back{
+    margin-bottom: -5%;
+    
+}
+.regbtn{
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 5px;
+}
+.regbtn:hover{
+    background-color: black;
+    color: #BCF4F5;
+}
+.regform{
+    border: 2px solid black;
+    margin-left: 40%;
+    margin-right: 40%;
+    padding-bottom: .5%;
+    margin-bottom: 3%;
+    margin-top: -1.5%;
+    background-color: white;
+    
+}
+.header{
+    margin-top: -1%;
+    margin-bottom: -0.5%;
+}
+.input{
+    background-color: transparent;
+    border: 2px solid black;
+
+}
+::placeholder{
+    color: black;
+    background-color: transparent;
+}
+#submit{
+    background-color: transparent;
+    border: 2px solid black;
+}
+#submit:hover{
+    background-color: black;
+    color: white;
+}
+.errormessage{
+    padding-top: .5%;
+}

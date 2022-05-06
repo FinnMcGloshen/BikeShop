@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/register.css') }}">
     <title>Sign Up</title>
 </head>
 <body>
@@ -15,35 +15,45 @@
     </div>
     <center>
 
-    {% if error == "existingaccount" %}
+    <!-- {% if error == "existingaccount" %}
 
     <div class="errormessage">
         Existing user, please use a username and password that does not exist, or login.
     </div>
-    {% endif %}
+    {% endif %} -->
     
     <div class="back">
         <h1>Register</h1>
-        <form action="{{ url_for('register')}}" method="post" name="signupForm">
-            <p class="inputLabel">Enter Name:</p>
-            <input name="name" type="text" placeholder="Name" required/>
-            <p class="inputLabel">Enter Email:</p>
-            <input name="email" type="text" placeholder="Email" required/>
-            <p class="inputLabel">Create Username:</p>
-            <input name="username" type="text" placeholder="Username" required/>
-            <p class="inputLabel">Create Password:</p>
-            <input name="password" type="text" placeholder="Password" required/>
+        <form action="{{ url_for('register')}}" method="post" name="signupForm" class="regform">
+            <p class="inputlabel">Enter Name:</p>
+            <input class='input' name="name" type="text" placeholder="Name" required/>
+            <p class="inputlabel">Enter Email:</p>
+            <input class='input' name="email" type="text" placeholder="Email" required/>
+            <p class="inputlabel">Create Username:</p>
+            <input class='input' name="username" type="text" placeholder="Username" required/>
+            <p class="inputlabel">Create Password:</p>
+            <input class='input' name="password" type="text" placeholder="Password" required/>
             <br/>
+            <br>
             <button type="submit" id="submit">Sign Up</button>
             </div>
             <br/>
+            <div class="errormessage">
+            {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            {{message}}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+</div>
             <p>Already have an account?</p>
-            <a href="/">Login Here</a>
+            <a href="/" class="regbtn">Login Here</a>
         </form>
-        <br /><br />
-        <!-- <p id="copyright">
+       
+        <p id="copyright">
             © The Bike Shop
-        </p> -->
+        </p>
     </div>
 </body>
 </html>

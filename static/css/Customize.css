@@ -1,0 +1,17 @@
+*{
+    background-color: #BCF4F5;
+}
+
+.Wheels{
+    width: 15%;
+}
+
+.Bike_frame{
+    width: 15;
+}
+
+.image{
+    height: 250px;
+    margin-top: 20px;
+    width: 100%;
+}

@@ -1,0 +1,55 @@
+*{
+    font-family: sans-serif;
+    color: black;
+    
+}
+html{
+    background-color: #BCF4F5;
+}
+body{
+    border: 2px solid black;
+    padding-bottom: 1%;
+    
+}
+.signupbtn{
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 5px;
+}
+.loginform{
+    border: 2px solid black;
+    margin-left: 40%;
+    margin-right: 40%;
+    padding-bottom: 3%;
+    background-color: white;
+    
+}
+.input{
+    background-color: transparent;
+    border: 2px solid black;
+
+}
+::placeholder{
+    color: black;
+    background-color: transparent;
+}
+#submit{
+    background-color: transparent;
+    border: 2px solid black;
+}
+#submit:hover{
+    background-color: black;
+    color: white;
+}
+.loginbtn{
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 5px;
+}
+.loginbtn:hover{
+    background-color: black;
+    color: #BCF4F5;
+}
+.errormessage{
+    color: black;
+}
