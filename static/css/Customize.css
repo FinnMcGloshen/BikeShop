@@ -1,9 +1,25 @@
-*{
+html, body{
     background-color: #BCF4F5;
+    
+}
+
+.back{
+    background-color: white;
+}
+
+.mar{
+    padding-top: 20%;
+}
+
+
+.bor{
+    border-right: 2px solid black;
+    
 }
 
 .Wheels{
     width: 10%;
+    height:100%
 }
 
 .Bike_frame{
@@ -29,12 +45,14 @@
 .image{
     height: 250px;
     margin-top: 20px;
-    width: 200px;
+    width: 175px;
 }
 
 .title{
     font-size: 400%;
     text-align: center;
+    text-decoration: underline;
+    
 }
 
 .items{
