@@ -8,7 +8,16 @@
     <title>Manager Page</title>
 </head>
 <body>
-    
+    {% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
     <div class="back">
     
       <h1 class="menu menu-large" id="menuhead"><u>Bike Shop</u></h1>
@@ -18,11 +27,17 @@
             <div class="shop-items">
                 <div class="shop-item">
                     <div class="tooltip shop-item-title"><u>{{b1name}}</u></div>
-                    <img class="shop-item-image" src="{{url_for('static',filename = '/images/redbike.jpg')}}">
+                    {% if filename %}
+                    <div>
+                        <img class="shop-item-image" src=b1image>
+                    </div>
+                {% endif %}
+                    <!-- <img class="shop-item-image" src={{b1image}}> -->
+
                     <span class="shop-item-price">{{b1price}}</span>
                     <div>
                         <p>{{b1desc}}</p>
-                        <form method="POST">
+                        <form method="POST" enctype = "multipart/form-data">
                             <input name="b1name" type="text" placeholder="Bike Name">
                             <input name="b1image" type="file">
                             <input name="b1price" type="text" placeholder="Bike Price">
