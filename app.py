@@ -1,6 +1,8 @@
 from flask import Flask,render_template,request,redirect, session,url_for, flash
+import urllib.request
 import psycopg2
 from werkzeug.utils import secure_filename
+import os
 
 app = Flask(__name__)
 app.secret_key = 'JMnQZxe1IdA8MUIjUNAcm6PbiXaftmjC0cJRK3sO'
@@ -16,9 +18,9 @@ def allowed_file(filename):
 def get_db_connection():
    conn = psycopg2.connect(
    host = 'localhost',
-   database = 'flask_db',
+   database = 'X',
    user = 'postgres',
-   password = '8010199'
+   password = 'pgadmin'
    )
 
    return conn
@@ -98,29 +100,50 @@ def logins():
 def manager():
     return render_template('manager.html')
 
+# @app.route('/display/<filename>')
+# def display_image(filename):
+# 	print('display_image filename: ' + filename)
+# 	return redirect(url_for('static', filename='uploads/' + filename), code=301)
+
 @app.route("/manager", methods=["POST"])
 def edit():
     b1name = request.form['b1name']
+    print(b1name)
     b1price = request.form['b1price']
+    print(b1price)
     b1desc = request.form['b1desc']
-    filename = request.form['b1image']
-    # if 'file' not in request.files:
-	# 	flash('No file part')
-	# 	return redirect(request.url)
-	# file = request.files['file']
-	# if file.filename == '':
-	# 	flash('No image selected for uploading')
-	# 	return redirect(request.url)
-	# if file and allowed_file(file.filename):
-	# 	filename = secure_filename(file.filename)
-	# 	file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-	# 	#print('upload_image filename: ' + filename)
-	# 	flash('Image successfully uploaded and displayed below')
-	# 	return render_template('upload.html', filename=filename)
-	# else:
-	# 	flash('Allowed image types are -> png, jpg, jpeg, gif')
-	# 	return redirect(request.url)
-    return render_template('manager.html',b1desc = b1desc,b1price=b1price,b1name=b1name,filename=filename)
+    print(b1desc)
+    b1image = request.files['b1image'].filename
+    print(b1image)
+    # b1image = request.form['file']
+    # if request.method == "POST":
+    #     file = request.files['b1image']
+        # if file and allowed_file(file.filename):
+        #     filename = secure_filename(file.filename)
+        #     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        #     return render_template('manager.html',b1desc = b1desc,b1price=b1price,b1name=b1name, display_image=file)
+        # # b1image.save(secure_filename(b1image.filename))
+
+
+
+    # if file not in request.files:
+    #     flash('No file part')
+    #     return redirect('manager')
+    #     file = request.files['file']
+    # if file.filename == '':
+    #     flash('No image selected for uploading')
+    #     return redirect('manager')
+    # if file and allowed_file(file.filename):
+    #     filename = secure_filename(file.filename)
+    #     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+    #     print('upload_image filename: ' + filename)
+    #     flash('Image successfully uploaded and displayed below')
+    #     return render_template('manager.html', b1desc = b1desc,b1price=b1price,b1name=b1name,b1image=b1image)
+    # else:
+    #     flash('Allowed image types are -> png, jpg, jpeg, gif')
+    return render_template('manager.html',b1desc = b1desc,b1price=b1price,b1name=b1name,b1image=b1image)
+
+
 
 @app.route("/shop")
 def shop():
