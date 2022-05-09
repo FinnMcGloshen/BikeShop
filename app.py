@@ -131,6 +131,7 @@ def shop1():
     conn = get_db_connection()
     curr = conn.cursor()
 
+
     active_user = session["active_user"]
     print(active_user)
 
