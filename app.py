@@ -136,6 +136,8 @@ def shop1():
     print(active_user)
 
     if request.method == 'POST':
+
+        
             if request.form.get('Buy1'):
                 curr.execute("SELECT * FROM bikes WHERE bicycle_name = 'Bicycle1'")
                 bike = curr.fetchone()
@@ -260,6 +262,10 @@ def shop1():
 @app.route("/Customize")
 def cust():
     return render_template("Customize.html")
+
+@app.route("/Checkout")
+def check():
+    return render_template("Checkout.html")
 
 
 if __name__ == '__main__':
