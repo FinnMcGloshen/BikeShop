@@ -3,15 +3,55 @@
 }
 
 .Wheels{
-    width: 15%;
+    width: 10%;
 }
 
 .Bike_frame{
-    width: 15;
+    width: 10%;
+}
+
+.Bike_chains{
+    width: 10%;
+}
+
+.Pedals{
+    width: 10%;
+}
+
+.Handlebars{
+    width: 10%;
+}
+
+.Bike_Gears{
+    width: 10%;
 }
 
 .image{
     height: 250px;
     margin-top: 20px;
-    width: 100%;
+    width: 200px;
+}
+
+.title{
+    font-size: 400%;
+    text-align: center;
+}
+
+.items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+   
+}
+
+.chains_im{
+    padding-top: 12%;
+}
+
+.frame_im{
+    padding-top: 12%;
+}
+
+.wheel_im{
+    padding-top: 12%;
 }

@@ -17,17 +17,22 @@
             <h1 class="managerheader">Manager Page</h1>
             <div class="shop-items">
                 <div class="shop-item">
-                    <div class="tooltip shop-item-title"><u>Bike 1</u></div>
-                    <img class="shop-item-image" src="https://th.bing.com/th/id/OIP.naUYfx-KxVfJLvUud77TXwHaE7?w=259&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7">
-                    <span class="shop-item-price">$12,000</span>
+                    <div class="tooltip shop-item-title"><u>{{b1name}}</u></div>
+                    <img class="shop-item-image" src="{{url_for('static',filename = '/images/redbike.jpg')}}">
+                    <span class="shop-item-price">{{b1price}}</span>
                     <div>
-                        <p>This mountian bike is not only sturdy </p>
-                        <p style="margin-top: -4%;">but also loooks good to the eye.</p>
-                        <button>Edit</button>
+                        <p>{{b1desc}}</p>
+                        <form method="POST">
+                            <input name="b1name" type="text" placeholder="Bike Name">
+                            <input name="b1image" type="file">
+                            <input name="b1price" type="text" placeholder="Bike Price">
+                            <input name="b1desc" type="text" placeholder="Bike Description">
+                            <input type="submit"></input>
+                        </form>
                     </div>
-                    <div class="shop-item-details" style="margin-top: -4%;">
+                    <!-- <div class="shop-item-details" style="margin-top: -4%;">
                         <button class="btn btn-primary shop-item-button" type="button" style="margin-left: 35%;">Save</button>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="shop-item">
                     <div class="tooltip shop-item-title"><u>Bike 2</u></div>
