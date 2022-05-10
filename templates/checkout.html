@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <div class="navbar">
+    <nav>
+        <ul>
+          <li>
+              <a href="/">Log-in</a>
+          </li>
+          <li>
+              <a href="/shop">Prebuilt Bikes</a>
+          </li>
+          <li>
+              <a href="/Customize">Customize</a>
+          </li>
+          <li>
+              <a href="/bio">Parts</a>
+          </li>
+          <li>
+              <a href="/Checkout">Cart</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/checkout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/Checkout.css') }}">
     <title>Sign Up</title>
 </head>
 <body>
@@ -13,13 +34,13 @@
     
       <h1 class="menu menu-large" id="menuhead"><u>Checkout</u></h1>
         </header>
-        <section class="container content-section">
-            <div class="shop-items">
+        <section class="container">
+                <img class="shop-item-image" src="https://th.bing.com/th/id/OIP.DzDvYMHXfjHzmY0bPYcBWwHaE8?w=297&h=198&c=7&r=0&o=5&dpr=1.25&pid=1.7">
                 <div class="shop-item">
-                    <p>hello</p>
- 
+                    <u><p>Cart</p></u>
+                </div>
 
-                
+        </section>        
         </form>
         <br /><br />
     </div>
