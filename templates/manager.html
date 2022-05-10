@@ -8,15 +8,7 @@
     <title>Manager Page</title>
 </head>
 <body>
-    {% with messages = get_flashed_messages() %}
-	  {% if messages %}
-		<ul>
-		{% for message in messages %}
-		  <li>{{ message }}</li>
-		{% endfor %}
-		</ul>
-	  {% endif %}
-	{% endwith %}
+    
 </p>
     <div class="back">
     
@@ -27,11 +19,15 @@
             <div class="shop-items">
                 <div class="shop-item">
                     <div class="tooltip shop-item-title"><u>{{b1name}}</u></div>
-                    {% if filename %}
-                    <div>
-                        <img class="shop-item-image" src=b1image>
-                    </div>
-                {% endif %}
+                    {% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		
+		{% for message in messages %}
+		  <img src="{{url_for('static', filename= file)}}">
+		{% endfor %}
+		
+	  {% endif %}
+	{% endwith %}
                     <!-- <img class="shop-item-image" src={{b1image}}> -->
 
                     <span class="shop-item-price">{{b1price}}</span>

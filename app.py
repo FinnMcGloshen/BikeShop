@@ -1,4 +1,7 @@
 from flask import Flask,render_template,request,redirect, session,url_for, flash
+from Crypto.Cipher import PKCS1_OAEP
+from Crypto.PublicKey import RSA
+from binascii import hexlify
 import urllib.request
 import psycopg2
 from werkzeug.utils import secure_filename
@@ -7,13 +10,41 @@ import os
 app = Flask(__name__)
 app.secret_key = 'JMnQZxe1IdA8MUIjUNAcm6PbiXaftmjC0cJRK3sO'
 
+private_key = RSA.generate(1024)
+public_key = private_key.publickey()
+
+print(public_key)
+print(private_key)
+
+private_pem = private_key.export_key().decode()
+public_pem = public_key.export_key().decode()
+
+print(private_pem)
+print(public_pem)
+
+with open('private.pem', 'w') as pr:
+	pr.write(private_pem)
+with open('public.pem', 'w') as pu:
+	pu.write(public_pem)
+
+print('private.pem:')
+with open('private.pem', 'r') as f:
+	print(f.read())
+
+print('public.pem:')
+with open('public.pem', 'r') as f:
+        print(f.read())
+
+pr_key = RSA.import_key(open('private.pem', 'r').read())
+pu_key = RSA.import_key(open('public.pem', 'r').read())
+
+cipher = PKCS1_OAEP.new(key=pu_key)
+decrypt = PKCS1_OAEP.new(key=pr_key)
+
 UPLOAD_FOLDER = 'static/uploads/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
-
-def allowed_file(filename):
-	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def get_db_connection():
    conn = psycopg2.connect(
@@ -42,13 +73,17 @@ def registers():
         name1 = request.form['name']
         user1 = request.form['username']
         pass1 = request.form['password']
+        encoded_pass = pass1.encode()
+        encrypted_pass = cipher.encrypt(encoded_pass)
+        
+
         email1 = request.form['email']
-        key = (user1,pass1)
+        key = (user1,encrypted_pass)
         if key not in users:
             print(key)
             print(users)
             print('making new account')
-            curr.execute("INSERT INTO bikeproject (name, username, password, email) VALUES (%s, %s, %s, %s)", [name1, user1, pass1, email1])
+            curr.execute("INSERT INTO bikeproject (name, username, password, email) VALUES (%s, %s, %s, %s)", [name1, user1, encrypted_pass, email1])
             conn.commit()
             
             curr.close()
@@ -77,6 +112,8 @@ def logins():
     if request.method == 'POST':
         user1 = request.form['username']
         pass1 = request.form['password']
+        
+        decrypted_pass = decrypt.decrypt(encrypted_pass)
 
         if (user1, pass1) in users:
             curr.execute("SELECT name FROM bikeproject WHERE username = %s AND password = %s", [user1, pass1])
@@ -104,6 +141,9 @@ def manager():
 # def display_image(filename):
 # 	print('display_image filename: ' + filename)
 # 	return redirect(url_for('static', filename='uploads/' + filename), code=301)
+def allowed_file(filename):
+	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 
 @app.route("/manager", methods=["POST"])
 def edit():
@@ -113,15 +153,18 @@ def edit():
     print(b1price)
     b1desc = request.form['b1desc']
     print(b1desc)
-    b1image = request.files['b1image'].filename
-    print(b1image)
-    # b1image = request.form['file']
-    # if request.method == "POST":
-    #     file = request.files['b1image']
+    # b1image = request.files['b1image'].filename
+    # b1image1 = "'"+UPLOAD_FOLDER+b1image+"'"
+    # print(b1image)
+    if request.method == "POST":
+        print('here')
+        file = request.files['b1image'].filename
+        print(file)
         # if file and allowed_file(file.filename):
+        #     print('here again')
         #     filename = secure_filename(file.filename)
         #     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        #     return render_template('manager.html',b1desc = b1desc,b1price=b1price,b1name=b1name, display_image=file)
+        #     return render_template('manager.html',b1desc = b1desc,b1price=b1price,b1name=b1name,file=file)
         # # b1image.save(secure_filename(b1image.filename))
 
 
@@ -141,7 +184,7 @@ def edit():
     #     return render_template('manager.html', b1desc = b1desc,b1price=b1price,b1name=b1name,b1image=b1image)
     # else:
     #     flash('Allowed image types are -> png, jpg, jpeg, gif')
-    return render_template('manager.html',b1desc = b1desc,b1price=b1price,b1name=b1name,b1image=b1image)
+    return render_template('manager.html',b1desc = b1desc,b1price=b1price,b1name=b1name,file=file)
 
 
 
