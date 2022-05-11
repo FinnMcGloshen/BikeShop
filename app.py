@@ -1,4 +1,7 @@
 from flask import Flask,render_template,request,redirect, session,url_for, flash
+from Crypto.Cipher import PKCS1_OAEP
+from Crypto.PublicKey import RSA
+from binascii import hexlify
 import urllib.request
 import psycopg2
 from werkzeug.utils import secure_filename
@@ -6,14 +9,42 @@ import os
 
 app = Flask(__name__)
 app.secret_key = 'JMnQZxe1IdA8MUIjUNAcm6PbiXaftmjC0cJRK3sO'
+# message = 'hello pass'
+# private_key = RSA.generate(1024)
+# public_key = private_key.publickey()
+
+# # print(public_key)
+# # print(private_key)
+
+# private_pem = private_key.export_key().decode()
+# public_pem = public_key.export_key().decode()
+
+# # print(private_pem)
+# # print(public_pem)
+
+# with open('private.pem', 'w') as pr:
+# 	pr.write(private_pem)
+# with open('public.pem', 'w') as pu:
+# 	pu.write(public_pem)
+
+# print('private.pem:')
+# with open('private.pem', 'r') as f:
+# 	print(f.read())
+
+# print('public.pem:')
+# with open('public.pem', 'r') as f:
+#         print(f.read())
+
+# pr_key = RSA.import_key(open('private.pem', 'r').read())
+# pu_key = RSA.import_key(open('public.pem', 'r').read())
+
+# cipher = PKCS1_OAEP.new(key=pu_key)
+# decrypt = PKCS1_OAEP.new(key=pr_key)
 
 UPLOAD_FOLDER = 'static/uploads/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
-
-def allowed_file(filename):
-	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def get_db_connection():
    conn = psycopg2.connect(
@@ -42,6 +73,11 @@ def registers():
         name1 = request.form['name']
         user1 = request.form['username']
         pass1 = request.form['password']
+        # encoded_pass = bytes(pass1, 'utf-8')
+        # encrypted_pass = cipher.encrypt(encoded_pass)
+        # print(encrypted_pass)
+        
+
         email1 = request.form['email']
         key = (user1,pass1)
         if key not in users:
@@ -72,12 +108,23 @@ def logins():
     curr = conn.cursor()
 
     curr.execute("SELECT username, password FROM bikeproject")
-    users = curr.fetchall()
-
+    users = curr.fetchall() 
     if request.method == 'POST':
         user1 = request.form['username']
         pass1 = request.form['password']
 
+        # passwordFromDB = ''
+        # for i in users:
+        #     if i[0]==user1:
+        #         passwordFromDB = i[1]
+    
+        # decrypt_key = PKCS1_OAEP.new (key=pr_key)
+        # print((passwordFromDB.tobytes()))
+        # decrypted_pass = decrypt_key.decrypt(passwordFromDB)
+        
+        
+            
+        
         if (user1, pass1) in users:
             curr.execute("SELECT name FROM bikeproject WHERE username = %s AND password = %s", [user1, pass1])
             name = curr.fetchone()
@@ -96,6 +143,8 @@ def logins():
             flash('Incorrect Username or Password')
             return redirect(url_for('login',error='noaccount'))
 
+    return redirect(url_for('login'))
+
 @app.route("/manager")
 def manager():
     return render_template('manager.html')
@@ -104,24 +153,29 @@ def manager():
 # def display_image(filename):
 # 	print('display_image filename: ' + filename)
 # 	return redirect(url_for('static', filename='uploads/' + filename), code=301)
+def allowed_file(filename):
+	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 
 @app.route("/manager", methods=["POST"])
 def edit():
+    
     b1name = request.form['b1name']
     print(b1name)
     b1price = request.form['b1price']
     print(b1price)
     b1desc = request.form['b1desc']
     print(b1desc)
-    b1image = request.files['b1image'].filename
+    b1image = request.files['b1image']
     print(b1image)
-    # b1image = request.form['file']
-    # if request.method == "POST":
-    #     file = request.files['b1image']
+    # b1image = request.files['b1image'].filename
+    # b1image1 = "'"+UPLOAD_FOLDER+b1image+"'"
+    # print(b1image)
         # if file and allowed_file(file.filename):
+        #     print('here again')
         #     filename = secure_filename(file.filename)
         #     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        #     return render_template('manager.html',b1desc = b1desc,b1price=b1price,b1name=b1name, display_image=file)
+        #     return render_template('manager.html',b1desc = b1desc,b1price=b1price,b1name=b1name,file=file)
         # # b1image.save(secure_filename(b1image.filename))
 
 
