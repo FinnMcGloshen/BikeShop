@@ -10,39 +10,10 @@ html, body {
     min-height: 100%;
     background-color: #BCF4F5;
 }
+
 #menuhead{
     font-family: "Trebuchet MS", sans-serif;
     text-transform: uppercase;
-}
-.nav ul {
-    margin: 0;
-}
-
-.nav li {
-    display: inline;
-}
-
-.nav a {
-    display: inline-block;
-    padding: .5em;
-    color:#812e2e;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.main-nav {
-    text-align: center;
-    font-size: 1.1em;
-    font-weight: lighter;
-    border-bottom: 1px solid #9c4e4e
-}
-
-.main-nav li {
-    padding: 0 5%;
-}
-
-.nav a:hover {
-    background-color: #656464
 }
 
 .menu {
@@ -54,24 +25,24 @@ html, body {
     color: black;
     margin-bottom: 2%;
     
-}
+} 
 
 .menu-large {
     font-size: 8em;
 }
 
-.content-section {
-    margin: 1em;
-}
-
 .container {
-    max-width: 75%;
+    max-width: 85%;
     margin: 0 auto;
     padding: 0 1.5em;
     background-color: white;
     border: 2px solid black;
     margin-bottom: 3%;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 2%;
 }
+
 .section-header {
     font-family: "Trebuchet MS", sans-serif;
     font-size: 4em;
@@ -91,7 +62,6 @@ html, body {
     cursor: pointer;
     text-decoration: none;
     margin-top: 5%;
-    
 }
 
 .btn-header {
@@ -106,7 +76,6 @@ html, body {
     padding-right: 2em;
 }
 
-
 .btn-play {
     display: block;
     margin: 0 auto;
@@ -118,6 +87,7 @@ html, body {
     padding: 0;
     text-align: center;
 }
+
 .btn-primary:hover{
     color: black;
     background-color: lightblue;
@@ -136,7 +106,10 @@ html, body {
     text-align: center;
     border: 2px solid black;
     width: 35%;
-    margin-top: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 10%;
+    font-size: 200%;
 }
 
 .shop-item-title {
@@ -151,9 +124,10 @@ html, body {
 }
 
 .shop-item-image {
-    height: 250px;
+    height: 100%;
     margin-top: 20px;
-    width: 100%;
+    width: 50%;
+
 }
 
 .shop-item-details {
@@ -167,43 +141,35 @@ html, body {
 .shop-item-price {
     color: black;
     font-weight: 600;
-    
 }
-
-
-.shop-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
+ 
 .navbar {  
-    background-color: white;  
-    width: 100%;
-    height: 500%;   
-    align-items: center;  
-    margin-bottom: 3%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    border: 2px solid black;
-    }  
-    
-    .navbar * {  
-    display: inline;  
-    }  
-    
-    .navbar li {  
-        margin-left: 12%;
-    }  
-    
-    .navbar li a {  
-    color: black;  
-    text-decoration: none;  
-    font-size: 150%;
-    
-    }  
-    
-    .navbar li a:hover{
-        color: blue;
-        text-decoration: underline black;
-    }
+background-color: white;  
+width: 100%;
+height: 500%;   
+align-items: center;  
+margin-bottom: 3%;
+padding-top: 1%;
+padding-bottom: 1%;
+border: 2px solid black;
+}  
+
+.navbar * {  
+display: inline;  
+}  
+
+.navbar li {  
+    margin-left: 12%;
+}  
+
+.navbar li a {  
+color: black;  
+text-decoration: none;  
+font-size: 150%;
+
+}  
+
+.navbar li a:hover{
+    color: blue;
+    text-decoration: underline black;
+}
