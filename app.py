@@ -131,12 +131,14 @@ def shop1():
     conn = get_db_connection()
     curr = conn.cursor()
 
+    curr.execute("SELECT bicycle_name,bicycle_price FROM orders")
+    x = curr.fetchall()
+    
 
     active_user = session["active_user"]
     print(active_user)
 
     if request.method == 'POST':
-
         
             if request.form.get('Buy1'):
                 curr.execute("SELECT * FROM bikes WHERE bicycle_name = 'Bicycle1'")
