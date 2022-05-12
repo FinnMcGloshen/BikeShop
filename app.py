@@ -9,6 +9,10 @@ import os
 
 app = Flask(__name__)
 app.secret_key = 'JMnQZxe1IdA8MUIjUNAcm6PbiXaftmjC0cJRK3sO'
+
+b1name = 'Bike 1'
+b1price = '$12000'
+b1desc = 'This mountian bike is not only sturdy but also loooks good to the eye.'
 # message = 'hello pass'
 # private_key = RSA.generate(1024)
 # public_key = private_key.publickey()
@@ -159,15 +163,16 @@ def allowed_file(filename):
 
 @app.route("/manager", methods=["POST"])
 def edit():
-    
+    b1name = 'Bike 1'
+    b1price = '$12,000'
+    b1desc = 'This mountian bike is not only sturdy but also loooks good to the eye.'
     b1name = request.form['b1name']
     print(b1name)
     b1price = request.form['b1price']
     print(b1price)
     b1desc = request.form['b1desc']
     print(b1desc)
-    b1image = request.files['b1image']
-    print(b1image)
+    
     # b1image = request.files['b1image'].filename
     # b1image1 = "'"+UPLOAD_FOLDER+b1image+"'"
     # print(b1image)
@@ -195,7 +200,7 @@ def edit():
     #     return render_template('manager.html', b1desc = b1desc,b1price=b1price,b1name=b1name,b1image=b1image)
     # else:
     #     flash('Allowed image types are -> png, jpg, jpeg, gif')
-    return render_template('manager.html',b1desc = b1desc,b1price=b1price,b1name=b1name,b1image=b1image)
+    return render_template('manager.html',b1desc = b1desc,b1price=b1price,b1name=b1name)
 
 
 
