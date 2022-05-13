@@ -182,7 +182,7 @@
                 </div>
                 
                 </div>
-                <div class="additem" id="additem">
+                <div class="additem" id="additem" >
                     <p>Add new item</p>
                     <input type="text" id="ItemName" placeholder="Enter item name">
                     <input type="text" id="ItemPrice" placeholder="Enter item price">
@@ -198,7 +198,9 @@
     </div>
 </body>
 <script>
-    newitemnum = 13
+    let newitemnum = 12
+    let newitemid = 'item'+newitemnum
+    console.log(newitemid)
     function removeItem(shopitem){
         shopitem.parentNode.removeChild(shopitem);
         console.log('item removed!')
@@ -223,7 +225,8 @@
 $("#btn_add").click(function() {
 // let fileList = ximage.files;
 console.log('here1')
-newitemnum + 1
+newitemnum = newitemnum + 1
+console.log(newitemnum)
 let newitem = document.getElementById('ItemName').value
 let newprice = document.getElementById('ItemPrice').value
 let newdesc = document.getElementById('ItemDesc').value
@@ -233,7 +236,7 @@ let _div = document.createElement('div');
 // node.setAttribute('id', "text")
 //adds the list item to the ul tag
 // document.querySelector('shopitems').appendChild(node);
-_div.innerHTML = "<div class='shopitem' id='item"+newitemnum+"'><div class='tooltip shop-item-title'><u>"+newitem+"</u></div><img class='shop-item-image' src='static/uploads/redbike.jpg'><span class='shop-item-price'>"+newprice+"</span><div><p>"+newdesc+"</p><div class='shop-item-details' style='margin-top: -4%;''><button class='btn btn-primary shop-item-button'type='button' onclick='removeItem(item13)' >Remove</button></div></div></div>"
+_div.innerHTML = "<div class='shopitem' id="+newitemnum+" style='width: 95%;'><div class='tooltip shop-item-title'><u>"+newitem+"</u></div><img class='shop-item-image' src='static/uploads/redbike.jpg' style='width:120;'><span class='shop-item-price'>"+newprice+"</span><div><p>"+newdesc+"</p><div class='shop-item-details' style='margin-top: -4%;''><button class='btn btn-primary shop-item-button'type='button' onclick='removeItem("+newitemnum+")' >Remove</button></div></div></div>"
 localStorage.setItem('newitem',_div)
 console.log(newitem)
 console.log(newprice)
