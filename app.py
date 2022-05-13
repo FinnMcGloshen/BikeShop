@@ -86,7 +86,18 @@ def login(error = None):
                     ''')
         conn.commit()
         cur.execute('''
-                INSERT INTO bikes (bicycle_name, bicycle_price) VALUES ('Bicycle1','$12,000')''')
+                INSERT INTO bikes (bicycle_name, bicycle_price) VALUES ('Bicycle1','$12,000'),
+                ('Bicycle2','$900'),
+                ('Bicycle3','$700'),
+                ('Bicycle4','$250'),
+                ('Bicycle5','$50'),
+                ('Велосипед6','₽448,049.79'),
+                ('Bicycle7','$500'),
+                ('Bicycle8','$1,000'),
+                ('Bicycle9','$1,500'),
+                ('Bicycle10','$5,000'),
+                ('Bicycle11','$550'),
+                ('Bicycle12','$800')''')
         conn.commit()
         return render_template("login.html",error=error)
 
