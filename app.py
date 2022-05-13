@@ -61,7 +61,34 @@ def registers():
 
 @app.route("/")
 def login(error = None):
-    return render_template("login.html",error=error)
+        conn = get_db_connection()
+        cur = conn.cursor()
+
+        cur.execute('DROP TABLE IF EXISTS orders;')
+        cur.execute('''
+                CREATE TABLE orders (
+                   name text, 
+                   username varchar(50), 
+                   password varchar(50), 
+                   email varchar(50), 
+                   bicycle_name varchar(20), 
+                   bicycle_price varchar(20)
+                    )
+                    ''')
+
+        cur.execute('DROP TABLE IF EXISTS bikes;')
+
+        cur.execute('''
+                CREATE TABLE bikes (
+                   bicycle_name varchar(20), 
+                   bicycle_price varchar(20)
+                    )
+                    ''')
+        conn.commit()
+        cur.execute('''
+                INSERT INTO bikes (bicycle_name, bicycle_price) VALUES ('Bicycle1','$12,000')''')
+        conn.commit()
+        return render_template("login.html",error=error)
 
 @app.route("/", methods=["POST", "GET"])
 def logins():
@@ -145,6 +172,7 @@ def shop1():
                 bike = curr.fetchone()
                 print(bike)
                 entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                print(entry)
                 curr.execute("INSERT INTO orders (name, username, password, email, bicycle_name, bicycle_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                 conn.commit()
                 curr.close()
@@ -267,7 +295,12 @@ def cust():
 
 @app.route("/Checkout")
 def check():
-    return render_template("Checkout.html")
+    conn = get_db_connection()
+    curr = conn.cursor()
+
+    curr.execute("SELECT bicycle_name,bicycle_price FROM orders")
+    x = curr.fetchall()
+    return render_template("Checkout.html", x=x)
 
 
 if __name__ == '__main__':
