@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <div class="navbar">
+        <nav>
+            <ul>
+              <li>
+                  <a href="/">Log-in</a>
+              </li>
+              <li>
+                  <a href="/shop">Prebuilt Bikes</a>
+              </li>
+              <li>
+                  <a href="/Customize">Customize</a>
+              </li>
+              <li>
+                  <a href="/bio">Parts</a>
+              </li>
+              <li>
+                  <a href="/Checkout">Cart</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,31 +39,17 @@
         </header>
         <section class="container content-section">
             <h1 class="managerheader">Manager Page</h1>
-            <div class="shop-items">
+            <div class="shop-items" id="shopitems">
                 <div class="shopitem" id="item1">
-                    <div class="tooltip shop-item-title"><u></u></div>
-                   
-		
+                    <div class="tooltip shop-item-title" id="B1"><u>Bike 1</u></div>                    
                     <img class="shop-item-image" src='https://th.bing.com/th/id/OIP.naUYfx-KxVfJLvUud77TXwHaE7?w=259&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7'>
-
-                    <span class="shop-item-price">{{b1price}}</span>
+                    <span class="shop-item-price">$12000</span>
                     <div>
-                        <p>{{b1desc}}</p>
-                        <form method="POST" enctype = "multipart/form-data">
-                            <input name="b1name" type="text" placeholder="Bike Name">
-                            <input value="Update" type="submit">
-                            <input name="b1price" type="text" placeholder="Bike Price">
-                            <input value="Update" type="submit">
-                            <input name="b1desc" type="text" placeholder="Bike Description">
-                            <input value='Update  'type="submit"></input>
-                        </form>
-                        <button class="itembtn" onclick="removeItem(item1)" id="1">
-                            Remove
-                        </button>
+                        <p>This mountain bike is not only sturdy but also looks good to the eye.</p>
+                        <div class="shop-item-details" style="margin-top: -4%;">
+                            <button class="btn btn-primary shop-item-button"type="button" onclick="removeItem(item1)" >Remove</button>
+                        </div>
                     </div>
-                    <!-- <div class="shop-item-details" style="margin-top: -4%;">
-                        <button class="btn btn-primary shop-item-button" type="button" style="margin-left: 35%;">Save</button>
-                    </div> -->
                 </div>
                 <div class="shopitem" id="item2">
                     <div class="tooltip shop-item-title"><u>Bike 2</u></div>
@@ -50,17 +57,10 @@
                     <span class="shop-item-price">$900</span>
                     <div>
                         <p>This E-bike is our top seller and our number one choice.</p>
-                        
                     </div>
-                    <button class="itembtn" onclick="removeItem(item2)" id="2">
-                        Remove
-                    </button>
                     <div class="shop-item-details" style="margin-top: -4%;">
-                        <button class="btn btn-primary shop-item-button"type="button" style="margin-left: 35%;">Save</button>
+                        <button class="btn btn-primary shop-item-button"type="button" onclick="removeItem(item2)" >Remove</button>
                     </div>
-                    <button class="itembtn" onclick="removeItem(item2)" id="2">
-                        Remove
-                    </button>
                 </div>
                 <div class="shopitem" id="item3">
                     <div class="tooltip shop-item-title"><u>Bike 3</u></div>
@@ -69,13 +69,10 @@
                     <div>
                         <p>This bike is meant for tall people looking </p>
                         <p style="margin-top: -4%;">to take a nice long ride.</p>
-                        <button class="itembtn" onclick="removeItem(item3)" id="3">
-                            Remove
-                        </button>
-                    </div>
-                    <div class="shop-item-details" style="margin-top: -4%;">
-                        <button class="btn btn-primary shop-item-button" type="button" style="margin-left: 35%;">Save</button>
-                    </div>
+                        <div class="shop-item-details" style="margin-top: -4%;">
+                            <button class="btn btn-primary shop-item-button"type="button" onclick="removeItem(item3)" >Remove</button>
+                        </div>
+                </div>
                 </div>
                 <div class="shopitem" id="item4">
                     <div class="tooltip shop-item-title"><u>Bike 4</u></div>
@@ -84,13 +81,10 @@
                     <div>
                         <p>This bike is meant for all types of terrain</p>
                         <p style="margin-top: -4%;">and rides very smoothly.</p>
-                        <button class="itembtn" onclick="removeItem(item4)" id="4">
-                            Remove
-                        </button>
-                    </div>
-                    <div class="shop-item-details" style="margin-top: -4%;">
-                        <button class="btn btn-primary shop-item-button" type="button" style="margin-left: 35%;">Save</button>
-                    </div>
+                        <div class="shop-item-details" style="margin-top: -4%;">
+                            <button class="btn btn-primary shop-item-button"type="button" onclick="removeItem(item4)" >Remove</button>
+                        </div>
+                </div>
                 </div>
                 <div class="shopitem" id="item5">
                     <div class="tooltip shop-item-title"><u>Bike 5</u></div>
@@ -99,28 +93,21 @@
                     <div>
                         <p>This bike is for thoes looking to race </p>
                         <p style="margin-top: -4%;">and beat all the competition.</p>
-                        <button class="itembtn" onclick="removeItem(item5)" id="5">
-                            Remove
-                        </button>
-                    </div>
-                    <div class="shop-item-details" style="margin-top: -4%;"> 
-                        <button class="btn btn-primary shop-item-button"type="button" style="margin-left: 35%;">Save</button>
-                    </div>
+                        <div class="shop-item-details" style="margin-top: -4%;">
+                            <button class="btn btn-primary shop-item-button"type="button" onclick="removeItem(item5)" >Remove</button>
+                        </div>
                 </div>
-
+                </div>
                 <div class="shopitem" id="item6">
                     <div class="tooltip shop-item-title"><u>Велосипед 6</u></div>
                     <img class="shop-item-image" src="https://th.bing.com/th/id/OIP.Ir5xsBMQhOhgzaNqTstKygHaE8?w=296&h=197&c=7&r=0&o=5&dpr=1.25&pid=1.7">
                     <span class="shop-item-price">₽448,049.79</span>
                     <div>
                         <p>Это мошенничество, пожалуйста, купите</p>
-                        <button class="itembtn" onclick="removeItem(item6)" id="6">
-                            Remove
-                        </button>
-                    </div>
-                    <div class="shop-item-details" style="margin-top: -4%;">
-                        <button class="btn btn-primary shop-item-button" type="button" style="margin-left: 35%;">Save</button>
-                    </div>
+                        <div class="shop-item-details" style="margin-top: -4%;">
+                            <button class="btn btn-primary shop-item-button"type="button" onclick="removeItem(item6)" >Remove</button>
+                        </div>
+                </div>
                 </div>
                 <div class="shopitem" id="item7">
                     <div class="tooltip shop-item-title"><u>Bike 7</u></div>
@@ -129,13 +116,10 @@
                     <div>
                         <p>This one is for the little one to go off roading </p>
                         <p style="margin-top: -4%;">to go off roading.</p>
-                        <button class="itembtn" onclick="removeItem(item7)" id="7">
-                            Remove
-                        </button>
-                    </div>
-                    <div class="shop-item-details" style="margin-top: -4%;">
-                        <button class="btn btn-primary shop-item-button"type="button" style="margin-left: 35%;">Save</button>
-                    </div>
+                        <div class="shop-item-details" style="margin-top: -4%;">
+                            <button class="btn btn-primary shop-item-button"type="button" onclick="removeItem(item7)" >Remove</button>
+                        </div>
+                </div>
                 </div>
                 <div class="shopitem" id="item8">
                     <div class="tooltip shop-item-title"><u>Bike 8</u></div>
@@ -144,13 +128,10 @@
                     <div>
                         <p>This mountian bike is for people who like to go  </p>
                         <p style="margin-top: -4%;">fast but still like to take a nice long ride.</p>
-                        <button class="itembtn" onclick="removeItem(item8)" id="8">
-                            Remove
-                        </button>
-                    </div>
-                    <div class="shop-item-details" style="margin-top: -4%;">
-                        <button class="btn btn-primary shop-item-button" type="button" style="margin-left: 35%;">Save</button>
-                    </div>
+                        <div class="shop-item-details" style="margin-top: -4%;">
+                            <button class="btn btn-primary shop-item-button"type="button" onclick="removeItem(item8)" >Remove</button>
+                        </div>
+                </div>
                 </div>
                 <div class="shopitem" id="item9">
                      <div class="tooltip shop-item-title"><u>Bike 9</u></div>
@@ -158,13 +139,10 @@
                     <span class="shop-item-price" style="margin-top: -4%;">$1,500</span>
                     <div>
                         <p>This one is meant for just the avarage rider.</p>
-                        <button class="itembtn" onclick="removeItem(item9)" id="9">
-                            Remove
-                        </button>
-                    </div>
-                    <div class="shop-item-details" style="margin-top: -4%;">
-                        <button class="btn btn-primary shop-item-button" type="button" style="margin-left: 35%;">Save</button>
-                    </div>
+                        <div class="shop-item-details" style="margin-top: -4%;">
+                            <button class="btn btn-primary shop-item-button"type="button" onclick="removeItem(item9)" >Remove</button>
+                        </div>
+                </div>
                 </div>
                 <div class="shopitem"  id="item10">
                     <div class="tooltip shop-item-title"><u>Bike 10</u></div>
@@ -173,13 +151,10 @@
                     <div>
                         <p>This mountian bike is for taller people who </p>
                         <p style="margin-top: -4%;">who want an adventer ride.</p>
-                        <button class="itembtn" onclick="removeItem(item10)" id="10">
-                            Remove
-                        </button>
-                    </div>
-                    <div class="shop-item-details" style="margin-top: -4%;">
-                        <button class="btn btn-primary shop-item-button"type="button" style="margin-left: 35%;">Save</button>
-                    </div>
+                        <div class="shop-item-details" style="margin-top: -4%;">
+                            <button class="btn btn-primary shop-item-button"type="button" onclick="removeItem(item10)" >Remove</button>
+                        </div>
+                </div>
                 </div>
                 <div class="shopitem"  id="item11">
                     <div class="tooltip shop-item-title"><u>Bike 11</u></div>
@@ -188,13 +163,10 @@
                     <div>
                         <p>This bike is for a casual rider who likes</p>
                         <p style="margin-top: -4%;">to look stylish while they ride.</p>
-                        <button class="itembtn" onclick="removeItem(item11)" id="11">
-                            Remove
-                        </button>
-                    </div>
-                    <div class="shop-item-details" style="margin-top: -4%;">
-                        <button class="btn btn-primary shop-item-button"type="button" style="margin-left: 35%;">Save</button>
-                    </div>
+                        <div class="shop-item-details" style="margin-top: -4%;">
+                            <button class="btn btn-primary shop-item-button"type="button" onclick="removeItem(item11)" >Remove</button>
+                        </div>
+                </div>
                 </div>
                 <div class="shopitem" id="item12">
                     <div class="tooltip shop-item-title"><u>Bike 12</u></div>
@@ -203,25 +175,22 @@
                     <div>
                         <p>This E-bike is meant for people looking to ride </p>
                         <p style="margin-top: -4%;">but like the look of a motorcycle.</p>
-                        <button class="itembtn" onclick="removeItem(item12)" id="12">
-                            Remove
-                        </button>
-                    </div>
-                    <div class="shop-item-details" style="margin-top: -4%;">
-                        <button class="btn btn-primary shop-item-button"type="button" style="margin-left: 35%;">Save</button>
-                    </div>
+                        <div class="shop-item-details" style="margin-top: -4%;">
+                            <button class="btn btn-primary shop-item-button"type="button" onclick="removeItem(item12)" >Remove</button>
+                        </div>
                 </div>
-                <div id="additem">
+                </div>
+                
+                </div>
+                <div class="additem" id="additem">
                     <p>Add new item</p>
                     <input type="text" id="ItemName" placeholder="Enter item name">
                     <input type="text" id="ItemPrice" placeholder="Enter item price">
+                    <input type="text" id="ItemDesc" placeholder="Enter item description">
                     <!-- <form> -->
-                        <input capture="user" type='file' accept="image/*" id="ximage" onchange="readURL(this);" />
-                        <label for="ximage"></label>
-                        <img id="addimage" src="#" alt="your image" />
+                        <img id="defaultimg" src="static/uploads/redbike.jpg" alt="your image" />
                         <button id="btn_add">Add</button>
                     <!-- </form> -->
-                </div>
                 </div>
         
         </form>
@@ -229,6 +198,7 @@
     </div>
 </body>
 <script>
+    newitemnum = 13
     function removeItem(shopitem){
         shopitem.parentNode.removeChild(shopitem);
         console.log('item removed!')
@@ -251,25 +221,26 @@
         $(document).ready(function() {
 
 $("#btn_add").click(function() {
-let fileList = ximage.files;
+// let fileList = ximage.files;
+console.log('here1')
+newitemnum + 1
 let newitem = document.getElementById('ItemName').value
 let newprice = document.getElementById('ItemPrice').value
-let newimage = fileList
-let node = document.createElement('th');
+let newdesc = document.getElementById('ItemDesc').value
+// let newimage = fileList
+let _div = document.createElement('div');
 //gives new list item the id of text
-node.setAttribute('id', "text")
+// node.setAttribute('id', "text")
 //adds the list item to the ul tag
-document.querySelector('table').appendChild(node);
-
-document.getElementById("text").innerHTML = newitem
-
+// document.querySelector('shopitems').appendChild(node);
+_div.innerHTML = "<div class='shopitem' id='item"+newitemnum+"'><div class='tooltip shop-item-title'><u>"+newitem+"</u></div><img class='shop-item-image' src='static/uploads/redbike.jpg'><span class='shop-item-price'>"+newprice+"</span><div><p>"+newdesc+"</p><div class='shop-item-details' style='margin-top: -4%;''><button class='btn btn-primary shop-item-button'type='button' onclick='removeItem(item13)' >Remove</button></div></div></div>"
+localStorage.setItem('newitem',_div)
 console.log(newitem)
 console.log(newprice)
-console.log(newimage)
-$("#menutable").append("<th><div class='item' id='item21'> <div class='itemtop'><p class='itemtext'>" + newitem +"</p><p class='price'>"+newprice+"</p></div><img src='' class='images' /><button class='itembtn' onclick='removeItem(item21)'>Remove</button></div></th>");
+console.log(newdesc)
+shopitems.appendChild(_div)
+// $("#shopitems").append("<div class='shopitem' id='item12'><div class='tooltip shop-item-title'><u>"+newitem+"</u></div><img class='shop-item-image' src='https://th.bing.com/th/id/OIP.ZzhFMEHOa9cDnlHCvkA13wHaEy?w=290&h=188&c=7&r=0&o=5&pid=1.7'><span class='shop-item-price'>"+newprice+"</span><div><p>"+newdesc+"</p><div class='shop-item-details' style='margin-top: -4%;''><button class='btn btn-primary shop-item-button'type='button' onclick='removeItem(item13)' >Remove</button></div></div></div>");
 });	
 })
-;
-
 </script>
 </html>
