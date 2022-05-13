@@ -207,3 +207,9 @@ html, body {
         color: blue;
         text-decoration: underline black;
     }
+    .additem{
+        border: 2px solid black;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 5%;
+    }
