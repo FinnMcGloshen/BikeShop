@@ -26,7 +26,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/Checkout.css') }}">
-    <title>Sign Up</title>
 </head>
 <body>
     
@@ -37,9 +36,12 @@
         <section class="container">
                 <img class="shop-item-image" src="https://th.bing.com/th/id/OIP.DzDvYMHXfjHzmY0bPYcBWwHaE8?w=297&h=198&c=7&r=0&o=5&dpr=1.25&pid=1.7">
                 <div class="shop-item">
-                    <u><p>Cart</p></u>
+                    <u><p style="font-size: 150%;">Cart</p></u>
+                    {% for i in x %}
+                    <p style="color: black;">{{i[1]}}:{{i[0]}}</p>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary shop-item-button" style="margin-bottom: 3%; font-size: 70%;">Receipt</button>
                 </div>
-
         </section>        
         </form>
         <br /><br />
