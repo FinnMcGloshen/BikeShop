@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <div class="navbar">
+        <nav>
+            <ul>
+              <li>
+                  <a href="/">Log-in</a>
+              </li>
+              <li>
+                  <a href="/shop">Prebuilt Bikes</a>
+              </li>
+              <li>
+                  <a href="/Customize">Customize</a>
+              </li>
+              <li>
+                  <a href="/bio">Parts</a>
+              </li>
+              <li>
+                  <a href="/Checkout">Cart</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -177,6 +198,7 @@
     </div>
 </body>
 <script>
+    newitemnum = 13
     function removeItem(shopitem){
         shopitem.parentNode.removeChild(shopitem);
         console.log('item removed!')
@@ -201,6 +223,7 @@
 $("#btn_add").click(function() {
 // let fileList = ximage.files;
 console.log('here1')
+newitemnum + 1
 let newitem = document.getElementById('ItemName').value
 let newprice = document.getElementById('ItemPrice').value
 let newdesc = document.getElementById('ItemDesc').value
@@ -210,8 +233,8 @@ let _div = document.createElement('div');
 // node.setAttribute('id', "text")
 //adds the list item to the ul tag
 // document.querySelector('shopitems').appendChild(node);
-_div.innerHTML = "<div class='shopitem' id='item13'><div class='tooltip shop-item-title'><u>"+newitem+"</u></div><img class='shop-item-image' src='static/uploads/redbike.jpg'><span class='shop-item-price'>"+newprice+"</span><div><p>"+newdesc+"</p><div class='shop-item-details' style='margin-top: -4%;''><button class='btn btn-primary shop-item-button'type='button' onclick='removeItem(item13)' >Remove</button></div></div></div>"
-localStorage.setItem(_div)
+_div.innerHTML = "<div class='shopitem' id='item"+newitemnum+"'><div class='tooltip shop-item-title'><u>"+newitem+"</u></div><img class='shop-item-image' src='static/uploads/redbike.jpg'><span class='shop-item-price'>"+newprice+"</span><div><p>"+newdesc+"</p><div class='shop-item-details' style='margin-top: -4%;''><button class='btn btn-primary shop-item-button'type='button' onclick='removeItem(item13)' >Remove</button></div></div></div>"
+localStorage.setItem('newitem',_div)
 console.log(newitem)
 console.log(newprice)
 console.log(newdesc)
