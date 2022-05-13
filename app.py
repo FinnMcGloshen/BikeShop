@@ -107,7 +107,6 @@ def login(error = None):
 
 @app.route("/", methods=["POST", "GET"])
 def logins():
-    print("here")
     conn = get_db_connection()
     curr = conn.cursor()
 
