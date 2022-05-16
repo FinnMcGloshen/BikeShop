@@ -1,34 +1,56 @@
 <html>
+    <div class="navbar">
+    <nav>
+        <ul>
+          <li>
+              <a href="/">Log-out</a>
+          </li>
+          <li>
+              <a href="/shop">Prebuilt Bikes</a>
+          </li>
+          <li>
+              <a href="/Customize">Customize</a>
+          </li>
+          <li>
+              <a href="/bio">Parts</a>
+          </li>
+          <li>
+              <a href="/Checkout">Cart</a>
+          </li>
+        </ul>
+    </nav>
+</div> 
     <head>
-        <link rel="stylesheet" href="{{ url_for('static',filename='css/Customize.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/parts.css') }}">
         <h1 class="title">Parts For Bikes</h1>
     </head>
 
     <body>
+        <section class="items">
         <div>
-            <h1>Seats</h1>
+            <h1 class="hea">Seats</h1>
 
-            <div>
+            <div class="back">
                 <p>Cloud 9 Cruiser Anatomic HD</p>
-                <img src="https://bicycleseats.com/thumbnail.asp?file=assets/images/49298.jpg&maxx=300&maxy=0">
+                <img class="image" src="https://bicycleseats.com/thumbnail.asp?file=assets/images/49298.jpg&maxx=300&maxy=0">
                 <div>
                     <p>$27.69</p>
                     <button name="s1" type="submit">BUY</button>
                 </div>
             </div>
 
-            <div>
+            <div class="back">
                 <p>Cloud 9 Cruiser Anatomic HD</p>
-                <img src="https://bicycleseats.com/thumbnail.asp?file=assets/images/easyseat-deluxe-side.jpg&maxx=300&maxy=0">
+                <img class="image"  src="https://bicycleseats.com/thumbnail.asp?file=assets/images/easyseat-deluxe-side.jpg&maxx=300&maxy=0">
                 <div>
                     <p>$89.95</p>
                     <button name="s2" type="submit">BUY</button>
                 </div>
             </div>
 
-            <div>
+            <div class="back">
                 <p>Sunlite Backrest Saddle</p>
-                <img src="https://bicycleseats.com/thumbnail.asp?file=assets/images/41501.jpg&maxx=300&maxy=0">
+                <img class="image"  src="https://bicycleseats.com/thumbnail.asp?file=assets/images/41501.jpg&maxx=300&maxy=0">
                 <div>
                     <p>$69.95</p>
                     <button name="s3" type="submit">BUY</button>
@@ -39,29 +61,29 @@
 
 
         <div>
-            <h1>Bells</h1>
+            <h1 class="hea">Bells</h1>
 
-            <div>
+            <div class="back">
                 <p>Classic Bike Bell</p>
-                <img src="https://m.media-amazon.com/images/I/61IjMILLHOL._AC_UL320_.jpg">
+                <img class="image"  src="https://m.media-amazon.com/images/I/61IjMILLHOL._AC_UL320_.jpg">
                 <div>
                     <p>$6.98</p>
                     <button name="b1" type="submit">BUY</button>
                 </div>
             </div>
 
-            <div>
+            <div class="back">
                 <p>Kids Bike Bell</p>
-                <img src="https://m.media-amazon.com/images/I/51dhEsjTXXS._AC_UL320_.jpg">
+                <img class="image"  src="https://m.media-amazon.com/images/I/51dhEsjTXXS._AC_UL320_.jpg">
                 <div>
                     <p>$11.99</p>
                     <button name="b2" type="submit">BUY</button>
                 </div>
             </div>
 
-            <div>
+            <div class="back">
                 <p>Electric Bike Bell</p>
-                <img src="https://m.media-amazon.com/images/I/71BGnfWoLxL._AC_UL320_.jpg">
+                <img class="image"  src="https://m.media-amazon.com/images/I/71BGnfWoLxL._AC_UL320_.jpg">
                 <div>
                     <p>$14.99</p>
                     <button name="b3" type="submit">BUY</button>
@@ -71,29 +93,29 @@
         </div>
         
         <div>
-            <h1>Lights</h1>
+            <h1 class="headd">Lights</h1>
 
-            <div>
+            <div class="back">
                 <p>Bontrager Ion 200 RT Front Bike Light</p>
-                <img src="https://trek.scene7.com/is/image/TrekBicycleProducts/BontragerIon200RT_23709_A_Primary?$responsive-pjpg$&cache=on,on&wid=640&hei=480">
+                <img class="image"  src="https://trek.scene7.com/is/image/TrekBicycleProducts/BontragerIon200RT_23709_A_Primary?$responsive-pjpg$&cache=on,on&wid=640&hei=480">
                 <div>
                     <p>$64.99</p>
                     <button name="l1" type="submit">BUY</button>
                 </div>
             </div>
 
-            <div>
+            <div class="back">
                 <p>Bontrager Ion RT/Flare RT Light Set</p>
-                <img src="https://trek.scene7.com/is/image/TrekBicycleProducts/BontragerIonProRTFlareRTSet_23711_A_Primary?$responsive-pjpg$&cache=on,on&wid=640&hei=480">
+                <img class="image"  src="https://trek.scene7.com/is/image/TrekBicycleProducts/BontragerIonProRTFlareRTSet_23711_A_Primary?$responsive-pjpg$&cache=on,on&wid=640&hei=480">
                 <div>
                     <p>$11.99</p>
                     <button name="l2" type="submit">BUY</button>
                 </div>
             </div>
 
-            <div>
+            <div class="back">
                 <p>Electra Retro Headlight</p>
-                <img src="https://trek.scene7.com/is/image/TrekBicycleProducts/ElectraRetroHeadlight_29398_A_Primary?$responsive-pjpg$&cache=on,on&wid=640&hei=480">
+                <img class="image"  src="https://trek.scene7.com/is/image/TrekBicycleProducts/ElectraRetroHeadlight_29398_A_Primary?$responsive-pjpg$&cache=on,on&wid=640&hei=480">
                 <div>
                     <p>$54.99</p>
                     <button name="l3" type="submit">BUY</button>
@@ -103,29 +125,29 @@
         </div>
 
         <div>
-            <h1>Mirrors</h1>
+            <h1 class="hea">Mirrors</h1>
 
-            <div>
+            <div class="back">
                 <p>Zefal Spy Mirror</p>
-                <img src="https://static.modernbike.com/144/thumb_2126233417_20151229052424.jpg">
+                <img class="image"  src="https://static.modernbike.com/144/thumb_2126233417_20151229052424.jpg">
                 <div>
                     <p>$14.99</p>
                     <button name="l1" type="submit">BUY</button>
                 </div>
             </div>
 
-            <div>
+            <div class="back">
                 <p>Third Eye Bar End Mirror</p>
-                <img src="https://static.modernbike.com/144/thumb_IG-141945878_20150312012539.jpg">
+                <img class="image"  src="https://static.modernbike.com/144/thumb_IG-141945878_20150312012539.jpg">
                 <div>
                     <p>$11.00</p>
                     <button name="l2" type="submit">BUY</button>
                 </div>
             </div>
 
-            <div>
+            <div class="back">
                 <p>Sprintech Dropbar Mirror</p>
-                <img src="https://static.modernbike.com/144/thumb_2126181383.jpg">
+                <img class="image"  src="https://static.modernbike.com/144/thumb_2126181383.jpg">
                 <div>
                     <p>$34.99</p>
                     <button name="l3" type="submit">BUY</button>
@@ -134,7 +156,7 @@
 
         </div>
 
-
+    </section>
 
     </body>
 

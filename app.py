@@ -1,6 +1,6 @@
 from flask import Flask,render_template,request,redirect, session,url_for, flash
-from Crypto.Cipher import PKCS1_OAEP
-from Crypto.PublicKey import RSA
+# from Crypto.Cipher import PKCS1_OAEP
+# from Crypto.PublicKey import RSA
 from binascii import hexlify
 import urllib.request
 import psycopg2
@@ -805,6 +805,10 @@ def cust1():
                     return redirect(url_for('Customize'))
 
 
+
+@app.route("/Parts")
+def part():
+    return render_template("parts.html")
 
 
 @app.route("/Checkout")
