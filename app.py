@@ -1,6 +1,6 @@
 from flask import Flask,render_template,request,redirect, session,url_for, flash
-from Crypto.Cipher import PKCS1_OAEP
-from Crypto.PublicKey import RSA
+# from Crypto.Cipher import PKCS1_OAEP
+# from Crypto.PublicKey import RSA
 from binascii import hexlify
 import urllib.request
 import psycopg2
@@ -53,9 +53,9 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 def get_db_connection():
    conn = psycopg2.connect(
    host = 'localhost',
-   database = 'X',
+   database = 'flask_db',
    user = 'postgres',
-   password = 'pgadmin'
+   password = '8010199'
    )
 
    return conn
@@ -239,7 +239,9 @@ def edit():
     #     flash('Allowed image types are -> png, jpg, jpeg, gif')
     return render_template('manager.html',b1desc = b1desc,b1price=b1price,b1name=b1name)
 
-
+@app.route("/desc")
+def descrp():
+    return render_template('Description.html')
 
 @app.route("/shop")
 def shop():
