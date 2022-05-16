@@ -1,50 +1,14 @@
 html, body{
     background-color: #BCF4F5;
-    
 }
 
 .back{
     background-color: white;
 }
 
-.mar{
-    padding-top: 20%;
-}
-
-
-.bor{
-    border-right: 2px solid black;
-    
-}
-
-.Wheels{
-    width: 10%;
-    height:100%
-}
-
-.Bike_frame{
-    width: 10%;
-}
-
-.Bike_chains{
-    width: 10%;
-}
-
-.Pedals{
-    width: 10%;
-}
-
-.Handlebars{
-    width: 10%;
-}
-
-.Bike_Gears{
-    width: 10%;
-}
-
 .image{
-    height: 250vh;
-    margin-top: 20vh;
+    height: 25vh;
+    margin-top: 5vh;
     width: 18vh;
 }
 
@@ -60,18 +24,6 @@ html, body{
     flex-wrap: wrap;
     justify-content: space-evenly;
    
-}
-
-.chains_im{
-    padding-top: 12%;
-}
-
-.frame_im{
-    padding-top: 12%;
-}
-
-.wheel_im{
-    padding-top: 12%;
 }
 
 .navbar {  
@@ -103,3 +55,11 @@ html, body{
     color: blue;
     text-decoration: underline black;
     }
+
+.hea{
+    padding-bottom: 15%;
+}
+
+.headd{
+    padding-bottom: 10%;
+}
