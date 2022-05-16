@@ -26,6 +26,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/prebuilt.css') }}">
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
     <title>Sign Up</title>
 </head>
 <body>
@@ -35,8 +37,8 @@
       <h1 class="menu menu-large" id="menuhead"><u>Bike Shop</u></h1>
         </header>
         <section class="container content-section">
-            <div class="shop-items">
-                <div class="shop-item">
+            <div class="shopitems">
+                <div class="shopitem" id="1">
                     <div class="tooltip shop-item-title" id="B1"><u>Bike 1</u></div>
                     <img class="shop-item-image" src="https://th.bing.com/th/id/OIP.naUYfx-KxVfJLvUud77TXwHaE7?w=259&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7">
                     <span class="shop-item-price" id="P1">$12,000</span>
@@ -52,7 +54,7 @@
                     </div>
                 </div>
 
-                <div class="shop-item">
+                <div class="shopitem" id="2">
                     <div class="tooltip shop-item-title" id="B2"><u>Bike 2</u></div>
                     <img class="shop-item-image" src="https://th.bing.com/th/id/OIP.DzDvYMHXfjHzmY0bPYcBWwHaE8?w=297&h=198&c=7&r=0&o=5&dpr=1.25&pid=1.7">
                     <span class="shop-item-price" id="P2">$900</span>
@@ -68,7 +70,7 @@
                     </div>
                 </div>
 
-                <div class="shop-item" >
+                <div class="shopitem" id="3">
                     <div class="tooltip shop-item-title" id="B3"><u>Bike 3</u></div>
                     <img class="shop-item-image" src="https://th.bing.com/th/id/OIP.zUAcXgcSZoibiu6kyqaxSgHaE7?w=297&h=198&c=7&r=0&o=5&dpr=1.25&pid=1.7">
                     <span class="shop-item-price" id="P3">$700</span>
@@ -84,7 +86,7 @@
                     </div>
                 </div>
 
-                <div class="shop-item">
+                <div class="shopitem" id="4">
                     <div class="tooltip shop-item-title" id="B4"><u>Bike 4</u></div>
                     <img class="shop-item-image" src="https://th.bing.com/th/id/OIP.8H9HLxB221gFCkU6V9yPMgHaE7?w=296&h=198&c=7&r=0&o=5&dpr=1.25&pid=1.7">
                     <span class="shop-item-price" id="P4">$250</span>
@@ -100,7 +102,7 @@
                     </div>
                 </div>
 
-                <div class="shop-item">
+                <div class="shopitem" id="5">
                     <div class="tooltip shop-item-title" id="B5"><u>Bike 5</u></div>
                     <img class="shop-item-image" src="https://th.bing.com/th/id/OIP.A5OimZIxVEG9LdTghBxXhwHaEf?w=281&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7">
                     <span class="shop-item-price" id="P5">$50</span>
@@ -116,7 +118,7 @@
                     </div>
                 </div>
 
-                <div class="shop-item">
+                <div class="shopitem" id="6">
                     <div class="tooltip shop-item-title" id="B6"><u>Велосипед 6</u></div>
                     <img class="shop-item-image" src="https://th.bing.com/th/id/OIP.Ir5xsBMQhOhgzaNqTstKygHaE8?w=296&h=197&c=7&r=0&o=5&dpr=1.25&pid=1.7">
                     <span class="shop-item-price" id="P6">₽448,049.79</span>
@@ -132,7 +134,7 @@
                     </div>
                 </div>
 
-                <div class="shop-item">
+                <div class="shopitem" id="7">
                     <div class="tooltip shop-item-title" id="B7"><u>Bike 7</u></div>
                     <img class="shop-item-image" src="https://th.bing.com/th/id/OIP.Ll8hIFrMK1vnbf08mCW44AHaE8?w=295&h=197&c=7&r=0&o=5&dpr=1.25&pid=1.7">
                     <span class="shop-item-price" id="P7">$500</span>
@@ -148,7 +150,7 @@
                     </div>
                 </div>
 
-                <div class="shop-item" >
+                <div class="shopitem" id="8">
                     <div class="tooltip shop-item-title" id="B8"><u>Bike 8</u></div>
                     <img class="shop-item-image" src="https://th.bing.com/th/id/OIP.j_xhcHLP7Wa98BPfjU7MzQHaFS?w=278&h=199&c=7&r=0&o=5&pid=1.7">
                     <span class="shop-item-price" id="P8">$1,000</span>
@@ -164,7 +166,7 @@
                     </div>
                 </div>
 
-                <div class="shop-item">
+                <div class="shopitem" id="9">
                      <div class="tooltip shop-item-title" id="B9"><u>Bike 9</u></div>
                     <img class="shop-item-image" src="https://th.bing.com/th/id/OIP.ccQbhk03RgBmQpCHRwDLSgHaE8?w=281&h=187&c=7&r=0&o=5&pid=1.7">
                     <span class="shop-item-price" id="P9">$1,500</span>
@@ -180,7 +182,7 @@
                     </div>
                 </div>
 
-                <div class="shop-item">
+                <div class="shopitem" id="10">
                     <div class="tooltip shop-item-title" id="B10"><u>Bike 10</u></div>
                     <img class="shop-item-image" src="https://th.bing.com/th/id/R.1420495a8b03750e7e03ec99cc3eec7d?rik=awsC2SiP6Cuqwg&pid=ImgRaw&r=0">
                     <span class="shop-item-price" id="P10">$5,000</span>
@@ -196,7 +198,7 @@
                     </div>
                 </div>
 
-                <div class="shop-item">
+                <div class="shopitem" id="11">
                     <div class="tooltip shop-item-title" id="B11"><u>Bike 11</u></div>
                     <img class="shop-item-image" src="https://th.bing.com/th/id/OIP.O5IXWUdcE9waLwJ3hT2KnwHaE7?w=263&h=180&c=7&r=0&o=5&pid=1.7">
                     <span class="shop-item-price" id="P11">$550</span>
@@ -212,7 +214,7 @@
                     </div>
                 </div>
 
-                <div class="shop-item">
+                <div class="shopitem" id="12">
                     <div class="tooltip shop-item-title" id="B12"><u>Bike 12</u></div>
                     <img class="shop-item-image" src="https://th.bing.com/th/id/OIP.ZzhFMEHOa9cDnlHCvkA13wHaEy?w=290&h=188&c=7&r=0&o=5&pid=1.7">
                     <span class="shop-item-price" id="P12">$800</span>
@@ -227,15 +229,70 @@
                         </form>                        
                     </div>
                 </div>
+                
                 </div>
+                <button class="btn "onclick="clearStorage()">Clear storage</button>
                 
         </form>
         <br /><br />
     </div>
 </body>
 <script>
-    let _div = document.createElement('div');
-    let x = localStorage.getItem('newitem')
-    shopitems.appendChild(x)
+    function clearStorage(){
+	localStorage.clear();
+}
+let newitemnum = 12
+let newitemid = 'item'+newitemnum
+
+let newitem = localStorage.getItem('newitem')
+let newprice = localStorage.getItem('newprice')
+let newdesc = localStorage.getItem('newdesc')
+if(localStorage.getItem('item1') === 'hide') {
+    $('#1').hide();
+    console.log('item 1 removed!')
+};
+if(localStorage.getItem('item2') === 'hide') {
+    $('#2').hide();
+};
+if(localStorage.getItem('item3') === 'hide') {
+    $('#3').hide();
+};
+if(localStorage.getItem('item4') === 'hide') {
+    $('#4').hide();
+};
+if(localStorage.getItem('item5') === 'hide') {
+    $('#5').hide();
+};
+if(localStorage.getItem('item6') === 'hide') {
+    $('#6').hide();
+};
+if(localStorage.getItem('item7') === 'hide') {
+    $('#7').hide();
+};
+if(localStorage.getItem('item8') === 'hide') {
+    $('#8').hide();
+};
+if(localStorage.getItem('item9') === 'hide') {
+    $('#9').hide();
+};
+if(localStorage.getItem('item10') === 'hide') {
+    $('#10').hide();
+};
+if(localStorage.getItem('item11') === 'hide') {
+    $('#11').hide();
+};
+if(localStorage.getItem('item12') === 'hide') {
+    $('#12').hide();
+};
+if(localStorage.getItem('item13') === 'true'){
+    // let _div = document.createElement('div');
+    let newitem = localStorage.getItem('newitem')
+    let newprice = localStorage.getItem('newprice')
+    let newdesc = localStorage.getItem('newdesc')
+    _div.innerhtml = "<div class='shopitem' id="+newitemid+"><div class='tooltip shop-item-title' id='B13'><u>"+newitem+"</u></div><img class='shop-item-image' src='static/uploads/redbike.jpg'><span class='shop-item-price' id='P13'>"+newprice+"</span><div><p>"+newdesc+"</p></div><div class='shop-item-details' style='margin-top: -4%;''><form method='post' action='{{ url_for('shop1')}}''><button name='Buy13' value='Buy13' type='submit' class='btn btn-primary shop-item-button' >Customize</button><button name='Buy13' value='Buy13' type='submit' class='btn btn-primary shop-item-button' >Order</button</form></div></div>"
+    $('#shopitems').append("<div class='shopitem' id="+newitemid+"><div class='tooltip shop-item-title' id='B13'><u>"+newitem+"</u></div><img class='shop-item-image' src='static/uploads/redbike.jpg'><span class='shop-item-price' id='P13'>"+newprice+"</span><div><p>"+newdesc+"</p></div><div class='shop-item-details' style='margin-top: -4%;''><form method='post' action='{{ url_for('shop1')}}''><button name='Buy13' value='Buy13' type='submit' class='btn btn-primary shop-item-button' >Customize</button><button name='Buy13' value='Buy13' type='submit' class='btn btn-primary shop-item-button' >Order</button</form></div></div>")
+    console.log('item added')
+}
+
 </script>
 </html>
