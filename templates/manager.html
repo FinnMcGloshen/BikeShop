@@ -39,7 +39,7 @@
         </header>
         <section class="container content-section">
             <h1 class="managerheader">Manager Page</h1>
-            <div class="shop-items" id="shopitems">
+            <div class="shopitems" id="shopitems">
                 <div class="shopitem" id="item1">
                     <div class="tooltip shop-item-title" id="B1"><u>Bike 1</u></div>                    
                     <img class="shop-item-image" src='https://th.bing.com/th/id/OIP.naUYfx-KxVfJLvUud77TXwHaE7?w=259&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7'>
@@ -200,48 +200,43 @@
 <script>
     let newitemnum = 12
     let newitemid = 'item'+newitemnum
-    console.log(newitemid)
-    function removeItem(shopitem){
-        shopitem.parentNode.removeChild(shopitem);
-        console.log('item removed!')
-        }
-        function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#addimage')
-                .attr('src', e.target.result)
-                .width(150)
-                .height(200);
-        };
-
-        reader.readAsDataURL(input.files[0]);
-    }
+    // console.log(newitemid)
+    function clearStorage(){
+	localStorage.clear();
 }
+    function removeItem(y) {
+        y.parentNode.removeChild(y)
+        let id = y.id
+        console.log(id)
+        localStorage.setItem(id, 'hide');
+        if(localStorage.getItem(id) === 'hide') {
+            $(y).hide();
+            console.log(y)
+        }
+            }
 
         $(document).ready(function() {
 
 $("#btn_add").click(function() {
-// let fileList = ximage.files;
+
 console.log('here1')
 newitemnum = newitemnum + 1
 console.log(newitemnum)
 let newitem = document.getElementById('ItemName').value
 let newprice = document.getElementById('ItemPrice').value
 let newdesc = document.getElementById('ItemDesc').value
-// let newimage = fileList
+
 let _div = document.createElement('div');
-//gives new list item the id of text
-// node.setAttribute('id', "text")
-//adds the list item to the ul tag
-// document.querySelector('shopitems').appendChild(node);
 _div.innerHTML = "<div class='shopitem' id="+newitemnum+" style='width: 95%;'><div class='tooltip shop-item-title'><u>"+newitem+"</u></div><img class='shop-item-image' src='static/uploads/redbike.jpg' style='width:120;'><span class='shop-item-price'>"+newprice+"</span><div><p>"+newdesc+"</p><div class='shop-item-details' style='margin-top: -4%;''><button class='btn btn-primary shop-item-button'type='button' onclick='removeItem("+newitemnum+")' >Remove</button></div></div></div>"
 localStorage.setItem('newitem',_div)
+localStorage.setItem('item13','true')
+localStorage.setItem('newitem',newitem)
+localStorage.setItem('newprice',newprice)
+localStorage.setItem('newdesc',newdesc)
 console.log(newitem)
 console.log(newprice)
 console.log(newdesc)
-shopitems.appendChild(_div)
+$('#shopitems').append("<div class='shopitem' id="+newitemnum+" style='width: 95%;'><div class='tooltip shop-item-title'><u>"+newitem+"</u></div><img class='shop-item-image' src='static/uploads/redbike.jpg' style='width:120;'><span class='shop-item-price'>"+newprice+"</span><div><p>"+newdesc+"</p><div class='shop-item-details' style='margin-top: -4%;''><button class='btn btn-primary shop-item-button'type='button' onclick='removeItem("+newitemnum+")' >Remove</button></div></div></div>")
 // $("#shopitems").append("<div class='shopitem' id='item12'><div class='tooltip shop-item-title'><u>"+newitem+"</u></div><img class='shop-item-image' src='https://th.bing.com/th/id/OIP.ZzhFMEHOa9cDnlHCvkA13wHaEy?w=290&h=188&c=7&r=0&o=5&pid=1.7'><span class='shop-item-price'>"+newprice+"</span><div><p>"+newdesc+"</p><div class='shop-item-details' style='margin-top: -4%;''><button class='btn btn-primary shop-item-button'type='button' onclick='removeItem(item13)' >Remove</button></div></div></div>");
 });	
 })

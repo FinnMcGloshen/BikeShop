@@ -521,9 +521,9 @@ def cust1():
     if request.method == 'POST':
             if request.form.get('w1'):
                 curr.execute("SELECT * FROM Customize WHERE part_name = 'Gay Wheels'")
-                bike = curr.fetchone()
-                print(bike)
-                entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                part_name = curr.fetchone()
+                print(part_name)
+                entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                 curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                 conn.commit()
                 curr.close()
@@ -533,9 +533,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('w2'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'Mountain Bike Wheels'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -545,9 +545,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('w3'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'Race Wheels'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -557,9 +557,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('w4'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'Future wheels'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -569,9 +569,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('f1'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'Carbon Road Frame'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -581,9 +581,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('f2'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'Gravel Frame'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -593,9 +593,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('f3'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'Carbon Mountain Frame'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -605,9 +605,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('f4'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'Mountain Frame'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -617,9 +617,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('c1'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = '12-Speed XTR Chain'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -629,9 +629,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('c2'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'Ultegra 10-Speed Chain'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -641,9 +641,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('c3'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'PC-850 8-Speed Chain'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -653,9 +653,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('c4'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'NX Eagle Chain'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -665,9 +665,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('p1'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'xt Mountain bike Pedals'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -677,9 +677,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('p2'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'PD-EH500 Dual Sided Pedals'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -689,9 +689,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('p3'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'Shimano Dura-Ace PD-R9100 Pedals'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -701,9 +701,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('p4'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'Garmin Vector 3 Power Pedals'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -713,9 +713,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('h1'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'Alloy Road Bike Handlebars'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -725,9 +725,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('h2'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'Carbon Fiber Road Bike Handlebars'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -737,9 +737,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('h3'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'Carbon Fiber Race Bike Handlebars'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -749,9 +749,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('h4'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'Bike Handlebars'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -761,9 +761,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('g1'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'Sugino Messenger Track Fixed Gear 44t'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -773,9 +773,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('g2'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'Gear Mountain Bike Racing Professional'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -785,9 +785,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('g3'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'JRL 10Tooth Clutch Gear Drive Sprocket'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -797,9 +797,9 @@ def cust1():
             if request.method == 'POST':
                 if request.form.get('g4'):
                     curr.execute("SELECT * FROM Customize WHERE part_name = 'Ultegra FC-R8000 Crankset'")
-                    bike = curr.fetchone()
-                    print(bike)
-                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    part_name = curr.fetchone()
+                    print(part_name)
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], part_name[0], part_name[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, part_name, part_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
                     conn.commit()
                     curr.close()
@@ -808,6 +808,161 @@ def cust1():
 
 
 
+@app.route("/Parts")
+def part():
+    return render_template("parts.html")
+
+@app.route("/Customize", methods=["POST", "GET"])
+def part1():
+    conn = get_db_connection()
+    curr = conn.cursor()
+
+
+    active_user = session["active_user"]
+    print(active_user)
+
+    if request.method == 'POST':
+            if request.form.get('s1'):
+                curr.execute("SELECT * FROM Part WHERE part = 'Cloud 9 Cruiser Anatomic HD'")
+                part = curr.fetchone()
+                print(part)
+                entry = [active_user[0], active_user[1], active_user[2], active_user[3], part[0], part[1]]
+                curr.execute("INSERT INTO orders (name, username, password, email, part, price_part) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                conn.commit()
+                curr.close()
+                conn.close()
+                return redirect(url_for('Parts'))
+
+    if request.method == 'POST':
+            if request.form.get('s2'):
+                curr.execute("SELECT * FROM Part WHERE part = 'Big Seat'")
+                part = curr.fetchone()
+                print(part)
+                entry = [active_user[0], active_user[1], active_user[2], active_user[3], part[0], part[1]]
+                curr.execute("INSERT INTO orders (name, username, password, email, part, price_part) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                conn.commit()
+                curr.close()
+                conn.close()
+                return redirect(url_for('Parts'))
+
+    if request.method == 'POST':
+            if request.form.get('s3'):
+                curr.execute("SELECT * FROM Part WHERE part = 'Sunlite Backrest Saddle'")
+                part = curr.fetchone()
+                print(part)
+                entry = [active_user[0], active_user[1], active_user[2], active_user[3], part[0], part[1]]
+                curr.execute("INSERT INTO orders (name, username, password, email, part, price_part) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                conn.commit()
+                curr.close()
+                conn.close()
+                return redirect(url_for('Parts'))
+
+    if request.method == 'POST':
+            if request.form.get('b1'):
+                curr.execute("SELECT * FROM Part WHERE part = 'Classic Bike Bell'")
+                part = curr.fetchone()
+                print(part)
+                entry = [active_user[0], active_user[1], active_user[2], active_user[3], part[0], part[1]]
+                curr.execute("INSERT INTO orders (name, username, password, email, part, price_part) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                conn.commit()
+                curr.close()
+                conn.close()
+                return redirect(url_for('Parts'))
+
+    if request.method == 'POST':
+            if request.form.get('b2'):
+                curr.execute("SELECT * FROM Part WHERE part = 'Kids Bike Bell'")
+                part = curr.fetchone()
+                print(part)
+                entry = [active_user[0], active_user[1], active_user[2], active_user[3], part[0], part[1]]
+                curr.execute("INSERT INTO orders (name, username, password, email, part, price_part) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                conn.commit()
+                curr.close()
+                conn.close()
+                return redirect(url_for('Parts'))
+                
+    if request.method == 'POST':
+            if request.form.get('b3'):
+                curr.execute("SELECT * FROM Part WHERE part = 'Kids Bike Bell'")
+                part = curr.fetchone()
+                print(part)
+                entry = [active_user[0], active_user[1], active_user[2], active_user[3], part[0], part[1]]
+                curr.execute("INSERT INTO orders (name, username, password, email, part, price_part) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                conn.commit()
+                curr.close()
+                conn.close()
+                return redirect(url_for('Parts'))
+
+    if request.method == 'POST':
+            if request.form.get('l1'):
+                curr.execute("SELECT * FROM Part WHERE part = 'Bontrager Ion 200 RT Front Bike Light'")
+                part = curr.fetchone()
+                print(part)
+                entry = [active_user[0], active_user[1], active_user[2], active_user[3], part[0], part[1]]
+                curr.execute("INSERT INTO orders (name, username, password, email, part, price_part) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                conn.commit()
+                curr.close()
+                conn.close()
+                return redirect(url_for('Parts'))
+
+    if request.method == 'POST':
+            if request.form.get('l2'):
+                curr.execute("SELECT * FROM Part WHERE part = 'Bontrager Ion RT/Flare RT Light Set'")
+                part = curr.fetchone()
+                print(part)
+                entry = [active_user[0], active_user[1], active_user[2], active_user[3], part[0], part[1]]
+                curr.execute("INSERT INTO orders (name, username, password, email, part, price_part) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                conn.commit()
+                curr.close()
+                conn.close()
+                return redirect(url_for('Parts'))
+
+    if request.method == 'POST':
+            if request.form.get('l3'):
+                curr.execute("SELECT * FROM Part WHERE part = 'Electra Retro Headlight'")
+                part = curr.fetchone()
+                print(part)
+                entry = [active_user[0], active_user[1], active_user[2], active_user[3], part[0], part[1]]
+                curr.execute("INSERT INTO orders (name, username, password, email, part, price_part) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                conn.commit()
+                curr.close()
+                conn.close()
+                return redirect(url_for('Parts'))
+
+    if request.method == 'POST':
+            if request.form.get('m1'):
+                curr.execute("SELECT * FROM Part WHERE part = 'Zefal Spy Mirror'")
+                part = curr.fetchone()
+                print(part)
+                entry = [active_user[0], active_user[1], active_user[2], active_user[3], part[0], part[1]]
+                curr.execute("INSERT INTO orders (name, username, password, email, part, price_part) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                conn.commit()
+                curr.close()
+                conn.close()
+                return redirect(url_for('Parts'))
+
+    if request.method == 'POST':
+            if request.form.get('m2'):
+                curr.execute("SELECT * FROM Part WHERE part = 'Third Eye Bar End Mirror'")
+                part = curr.fetchone()
+                print(part)
+                entry = [active_user[0], active_user[1], active_user[2], active_user[3], part[0], part[1]]
+                curr.execute("INSERT INTO orders (name, username, password, email, part, price_part) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                conn.commit()
+                curr.close()
+                conn.close()
+                return redirect(url_for('Parts'))
+
+    if request.method == 'POST':
+            if request.form.get('m3'):
+                curr.execute("SELECT * FROM Part WHERE part = 'Sprintech Dropbar Mirror'")
+                part = curr.fetchone()
+                entry = [active_user[0], active_user[1], active_user[2], active_user[3], part[0], part[1]]
+                curr.execute("INSERT INTO orders (name, username, password, email, part, price_part) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                conn.commit()
+                curr.close()
+                conn.close()
+                return redirect(url_for('Parts'))
 
 @app.route("/Checkout")
 def check():
