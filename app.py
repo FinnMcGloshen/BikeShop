@@ -177,6 +177,128 @@ def shop1():
     print(active_user)
 
     if request.method == 'POST':
+
+            if request.form.get('Cust1'):
+                curr.execute("SELECT * FROM bikes WHERE bicycle_name = 'Bicycle1'")
+                bike = curr.fetchone()
+                print(bike)
+                entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                print(entry)
+                curr.execute("INSERT INTO orders (name, username, password, email, bicycle_name, bicycle_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                conn.commit()
+                curr.close()
+                conn.close()
+                return redirect(url_for('cust'))
+
+            if request.form.get('Cust2'):
+                    curr.execute("SELECT * FROM bikes WHERE bicycle_name = 'Bicycle2'")
+                    bike = curr.fetchone()
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    curr.execute("INSERT INTO orders (name, username, password, email, bicycle_name, bicycle_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                    conn.commit()
+                    curr.close()
+                    conn.close()
+                    return redirect(url_for('cust'))
+
+            if request.form.get('Cust3'):
+                    curr.execute("SELECT * FROM bikes WHERE bicycle_name = 'Bicycle3'")
+                    bike = curr.fetchone()
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    curr.execute("INSERT INTO orders (name, username, password, email, bicycle_name, bicycle_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                    conn.commit()
+                    curr.close()
+                    conn.close()
+                    return redirect(url_for('cust'))
+
+            if request.form.get('Cust4'):
+                    curr.execute("SELECT * FROM bikes WHERE bicycle_name = 'Bicycle4'")
+                    bike = curr.fetchone()
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    curr.execute("INSERT INTO orders (name, username, password, email, bicycle_name, bicycle_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                    conn.commit()
+                    curr.close()
+                    conn.close()
+                    return redirect(url_for('cust'))
+
+            if request.form.get('Cust5'):
+                    curr.execute("SELECT * FROM bikes WHERE bicycle_name = 'Bicycle5'")
+                    bike = curr.fetchone()
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    curr.execute("INSERT INTO orders (name, username, password, email, bicycle_name, bicycle_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                    conn.commit()
+                    curr.close()
+                    conn.close()
+                    return redirect(url_for('cust'))
+
+            if request.form.get('Cust6'):
+                    curr.execute("SELECT * FROM bikes WHERE bicycle_name = 'Велосипед6'")
+                    bike = curr.fetchone()
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    curr.execute("INSERT INTO orders (name, username, password, email, bicycle_name, bicycle_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                    conn.commit()
+                    curr.close()
+                    conn.close()
+                    return redirect(url_for('cust'))
+
+            if request.form.get('Cust7'):
+                    curr.execute("SELECT * FROM bikes WHERE bicycle_name = 'Bicycle7'")
+                    bike = curr.fetchone()
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    curr.execute("INSERT INTO orders (name, username, password, email, bicycle_name, bicycle_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                    conn.commit()
+                    curr.close()
+                    conn.close()
+                    return redirect(url_for('cust'))
+
+            if request.form.get('Cust8'):
+                    curr.execute("SELECT * FROM bikes WHERE bicycle_name = 'Bicycle8'")
+                    bike = curr.fetchone()
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    curr.execute("INSERT INTO orders (name, username, password, email, bicycle_name, bicycle_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                    conn.commit()
+                    curr.close()
+                    conn.close()
+                    return redirect(url_for('cust'))
+
+            if request.form.get('Cust9'):
+                    curr.execute("SELECT * FROM bikes WHERE bicycle_name = 'Bicycle9'")
+                    bike = curr.fetchone()
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    curr.execute("INSERT INTO orders (name, username, password, email, bicycle_name, bicycle_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                    conn.commit()
+                    curr.close()
+                    conn.close()
+                    return redirect(url_for('cust'))
+
+            if request.form.get('Cust10'):
+                    curr.execute("SELECT * FROM bikes WHERE bicycle_name = 'Bicycle10'")
+                    bike = curr.fetchone()
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    curr.execute("INSERT INTO orders (name, username, password, email, bicycle_name, bicycle_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                    conn.commit()
+                    curr.close()
+                    conn.close()
+                    return redirect(url_for('cust'))
+
+            if request.form.get('Cust11'):
+                    curr.execute("SELECT * FROM bikes WHERE bicycle_name = 'Bicycle11'")
+                    bike = curr.fetchone()
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    curr.execute("INSERT INTO orders (name, username, password, email, bicycle_name, bicycle_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                    conn.commit()
+                    curr.close()
+                    conn.close()
+                    return redirect(url_for('cust'))
+
+            if request.form.get('Cust12'):
+                    curr.execute("SELECT * FROM bikes WHERE bicycle_name = 'Bicycle12'")
+                    bike = curr.fetchone()
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    curr.execute("INSERT INTO orders (name, username, password, email, bicycle_name, bicycle_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                    conn.commit()
+                    curr.close()
+                    conn.close()
+                    return redirect(url_for('cust'))
         
             if request.form.get('Buy1'):
                 curr.execute("SELECT * FROM bikes WHERE bicycle_name = 'Bicycle1'")
