@@ -210,33 +210,7 @@ def edit():
     b1desc = request.form['b1desc']
     print(b1desc)
     
-    # b1image = request.files['b1image'].filename
-    # b1image1 = "'"+UPLOAD_FOLDER+b1image+"'"
-    # print(b1image)
-        # if file and allowed_file(file.filename):
-        #     print('here again')
-        #     filename = secure_filename(file.filename)
-        #     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        #     return render_template('manager.html',b1desc = b1desc,b1price=b1price,b1name=b1name,file=file)
-        # # b1image.save(secure_filename(b1image.filename))
-
-
-
-    # if file not in request.files:
-    #     flash('No file part')
-    #     return redirect('manager')
-    #     file = request.files['file']
-    # if file.filename == '':
-    #     flash('No image selected for uploading')
-    #     return redirect('manager')
-    # if file and allowed_file(file.filename):
-    #     filename = secure_filename(file.filename)
-    #     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-    #     print('upload_image filename: ' + filename)
-    #     flash('Image successfully uploaded and displayed below')
-    #     return render_template('manager.html', b1desc = b1desc,b1price=b1price,b1name=b1name,b1image=b1image)
-    # else:
-    #     flash('Allowed image types are -> png, jpg, jpeg, gif')
+   
     return render_template('manager.html',b1desc = b1desc,b1price=b1price,b1name=b1name)
 
 
