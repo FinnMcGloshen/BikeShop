@@ -53,9 +53,9 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 def get_db_connection():
    conn = psycopg2.connect(
    host = 'localhost',
-   database = 'flask_db',
+   database = 'X',
    user = 'postgres',
-   password = '8010199'
+   password = 'pgadmin'
    )
 
    return conn
@@ -139,7 +139,8 @@ def login(error = None):
                 ('Bicycle9','$1,500'),
                 ('Bicycle10','$5,000'),
                 ('Bicycle11','$550'),
-                ('Bicycle12','$800')''')
+                ('Bicycle12','$800'),
+                ('Bicycle13','$500')''')
         conn.commit()
         return render_template("login.html",error=error)
 
@@ -200,43 +201,21 @@ def allowed_file(filename):
 
 @app.route("/manager", methods=["POST"])
 def edit():
-    b1name = 'Bike 1'
-    b1price = '$12,000'
-    b1desc = 'This mountian bike is not only sturdy but also loooks good to the eye.'
+    conn = get_db_connection()
+    curr = conn.cursor()
+    
     b1name = request.form['b1name']
     print(b1name)
     b1price = request.form['b1price']
     print(b1price)
     b1desc = request.form['b1desc']
     print(b1desc)
+    curr.execute("UPDATE bikes SET bicycle_price = '%s' WHERE bicycle_name = Bicycle13", [b1price])
+    print('price updated')
+    conn.commit()
+
     
-    # b1image = request.files['b1image'].filename
-    # b1image1 = "'"+UPLOAD_FOLDER+b1image+"'"
-    # print(b1image)
-        # if file and allowed_file(file.filename):
-        #     print('here again')
-        #     filename = secure_filename(file.filename)
-        #     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        #     return render_template('manager.html',b1desc = b1desc,b1price=b1price,b1name=b1name,file=file)
-        # # b1image.save(secure_filename(b1image.filename))
-
-
-
-    # if file not in request.files:
-    #     flash('No file part')
-    #     return redirect('manager')
-    #     file = request.files['file']
-    # if file.filename == '':
-    #     flash('No image selected for uploading')
-    #     return redirect('manager')
-    # if file and allowed_file(file.filename):
-    #     filename = secure_filename(file.filename)
-    #     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-    #     print('upload_image filename: ' + filename)
-    #     flash('Image successfully uploaded and displayed below')
-    #     return render_template('manager.html', b1desc = b1desc,b1price=b1price,b1name=b1name,b1image=b1image)
-    # else:
-    #     flash('Allowed image types are -> png, jpg, jpeg, gif')
+   
     return render_template('manager.html',b1desc = b1desc,b1price=b1price,b1name=b1name)
 
 @app.route("/desc")
@@ -382,6 +361,16 @@ def shop1():
                     curr.close()
                     conn.close()
                     return redirect(url_for('cust'))
+
+            if request.form.get('Cust13'):
+                    curr.execute("SELECT * FROM bikes WHERE bicycle_name = 'Bicycle13'")
+                    bike = curr.fetchone()
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    curr.execute("INSERT INTO orders (name, username, password, email, bicycle_name, bicycle_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                    conn.commit()
+                    curr.close()
+                    conn.close()
+                    return redirect(url_for('cust'))
         
             if request.form.get('Buy1'):
                 curr.execute("SELECT * FROM bikes WHERE bicycle_name = 'Bicycle1'")
@@ -497,6 +486,16 @@ def shop1():
 
             if request.form.get('Buy12'):
                     curr.execute("SELECT * FROM bikes WHERE bicycle_name = 'Bicycle12'")
+                    bike = curr.fetchone()
+                    entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
+                    curr.execute("INSERT INTO orders (name, username, password, email, bicycle_name, bicycle_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))
+                    conn.commit()
+                    curr.close()
+                    conn.close()
+                    return redirect(url_for('shop'))
+
+            if request.form.get('Buy13'):
+                    curr.execute("SELECT * FROM bikes WHERE bicycle_name = 'Bicycle13'")
                     bike = curr.fetchone()
                     entry = [active_user[0], active_user[1], active_user[2], active_user[3], bike[0], bike[1]]
                     curr.execute("INSERT INTO orders (name, username, password, email, bicycle_name, bicycle_price) VALUES (%s, %s, %s, %s, %s, %s)", (entry[0], entry[1], entry[2], entry[3], entry[4], entry[5]))

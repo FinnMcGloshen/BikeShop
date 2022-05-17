@@ -51,5 +51,9 @@ body{
     color: #BCF4F5;
 }
 .errormessage{
-    color: black;
+    color: red;
+}
+.message{
+    color: red;
+    padding-top: 0.5%;
 }
