@@ -11,7 +11,7 @@
     <center>
     <div class = "header">
         <!-- <img src="{{url_for('static', filename='images/logo.png')}}" id="logo"> -->
-        <h1>Bike Shop</h1>
+        <h1 style="margin-top:2%;">Bike Shop</h1>
     </div>
     <center>
 
@@ -23,7 +23,7 @@
     {% endif %} -->
     
     <div class="back">
-        <h1>Register</h1>
+        <h1 style="margin-bottom:2%;">Register</h1>
         <form action="{{ url_for('register')}}" method="post" name="signupForm" class="regform">
             <p class="inputlabel">Enter Name:</p>
             <input class='input' name="name" type="text" placeholder="Name" required/>
