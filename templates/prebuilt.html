@@ -38,7 +38,7 @@
         </header>
         <section class="container content-section">
 
-            <div class="shopitems">
+            <div class="shopitems" id="shopitems">
                 <div class="shopitem" id="1">
                     <div class="tooltip shop-item-title" id="B1"><u><a href="/desc">Bike 1</a></u></div>
 
@@ -293,12 +293,14 @@ if(localStorage.getItem('item12') === 'hide') {
     $('#12').hide();
 };
 if(localStorage.getItem('item13') === 'true'){
-    // let _div = document.createElement('div');
+    let _div = document.createElement('div');
     let newitem = localStorage.getItem('newitem')
     let newprice = localStorage.getItem('newprice')
     let newdesc = localStorage.getItem('newdesc')
+    let x = document.getElementById('shopitems').innerHTML
     _div.innerhtml = "<div class='shopitem' id="+newitemid+"><div class='tooltip shop-item-title' id='B13'><u>"+newitem+"</u></div><img class='shop-item-image' src='static/uploads/redbike.jpg'><span class='shop-item-price' id='P13'>"+newprice+"</span><div><p>"+newdesc+"</p></div><div class='shop-item-details' style='margin-top: -4%;''><form method='post' action='{{ url_for('shop1')}}''><button name='Buy13' value='Buy13' type='submit' class='btn btn-primary shop-item-button' >Customize</button><button name='Buy13' value='Buy13' type='submit' class='btn btn-primary shop-item-button' >Order</button</form></div></div>"
     $('#shopitems').append("<div class='shopitem' id="+newitemid+"><div class='tooltip shop-item-title' id='B13'><u>"+newitem+"</u></div><img class='shop-item-image' src='static/uploads/redbike.jpg'><span class='shop-item-price' id='P13'>"+newprice+"</span><div><p>"+newdesc+"</p></div><div class='shop-item-details' style='margin-top: -4%;''><form method='post' action='{{ url_for('shop1')}}''><button name='Buy13' value='Buy13' type='submit' class='btn btn-primary shop-item-button' >Customize</button><button name='Buy13' value='Buy13' type='submit' class='btn btn-primary shop-item-button' >Order</button</form></div></div>")
+    x.append("<div class='shopitem' id="+newitemid+"><div class='tooltip shop-item-title' id='B13'><u>"+newitem+"</u></div><img class='shop-item-image' src='static/uploads/redbike.jpg'><span class='shop-item-price' id='P13'>"+newprice+"</span><div><p>"+newdesc+"</p></div><div class='shop-item-details' style='margin-top: -4%;''><form method='post' action='{{ url_for('shop1')}}''><button name='Buy13' value='Buy13' type='submit' class='btn btn-primary shop-item-button' >Customize</button><button name='Buy13' value='Buy13' type='submit' class='btn btn-primary shop-item-button' >Order</button</form></div></div>")
     console.log('item added')
 }
 
