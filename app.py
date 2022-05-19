@@ -195,8 +195,8 @@ def manager():
 # def display_image(filename):
 # 	print('display_image filename: ' + filename)
 # 	return redirect(url_for('static', filename='uploads/' + filename), code=301)
-def allowed_file(filename):
-	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+# def allowed_file(filename):
+# 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 @app.route("/manager", methods=["POST"])
@@ -210,10 +210,11 @@ def edit():
     print(b1price)
     b1desc = request.form['b1desc']
     print(b1desc)
-    curr.execute("UPDATE bikes SET bicycle_price = '%s' WHERE bicycle_name = Bicycle13", [b1price])
+    curr.execute("UPDATE bikes SET bicycle_price = %s WHERE bicycle_name = 'Bicycle13';", [b1price])
     print('price updated')
     conn.commit()
-
+    curr.close()
+    conn.close()
     
    
     return render_template('manager.html',b1desc = b1desc,b1price=b1price,b1name=b1name)
