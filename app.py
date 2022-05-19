@@ -811,7 +811,7 @@ def cust1():
 def part():
     return render_template("parts.html")
 
-@app.route("/Customize", methods=["POST", "GET"])
+@app.route("/Parts", methods=["POST", "GET"])
 def part1():
     conn = get_db_connection()
     curr = conn.cursor()
@@ -971,6 +971,10 @@ def check():
     curr.execute("SELECT bicycle_name,bicycle_price FROM orders")
     x = curr.fetchall()
     return render_template("Checkout.html", x=x)
+
+@app.route("/Receipt")
+def re():
+    return render_template("Receipt.html")
 
 
 if __name__ == '__main__':
