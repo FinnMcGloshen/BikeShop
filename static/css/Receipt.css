@@ -2,50 +2,10 @@ html, body{
     background-color: #BCF4F5;
     
 }
-
-.back{
-    background-color: white;
-}
-
-.mar{
-    padding-top: 20%;
-} 
-
-
-.bor{
-    border-right: 2px solid black;
-    
-}
-
-.Wheels{
-    width: 10%;
-    height:100%
-}
-
-.Bike_frame{
-    width: 10%;
-}
-
-.Bike_chains{
-    width: 10%;
-}
-
-.Pedals{
-    width: 10%;
-}
-
-.Handlebars{
-    width: 10%;
-}
-
-.Bike_Gears{
-    width: 10%;
-}
-
-.image{
-    height: 30vh;
-    margin-top: 20vh;
-    width: 18vh;
+.move{
+    padding-top: 10%;
+    text-align: center;
+    font-size: 600%;
 }
 
 .title{
@@ -53,22 +13,6 @@ html, body{
     text-align: center;
     text-decoration: underline;
     
-}
-
-.items{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-   
-}
-
-
-.frame_im{
-    padding-top: 12%;
-}
-
-.wheel_im{
-    padding-top: 12%;
 }
 
 .navbar {  
