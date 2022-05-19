@@ -106,6 +106,15 @@ def login(error = None):
         conn = get_db_connection()
         cur = conn.cursor()
 
+        # cur.execute('''
+        #         CREATE TABLE bikeproject (
+        #            name text, 
+        #            username varchar(150), 
+        #            password varchar(30), 
+        #            email varchar(50)
+        #             )
+        #             ''')
+
         cur.execute('DROP TABLE IF EXISTS orders;')
         cur.execute('''
                 CREATE TABLE orders (
@@ -202,6 +211,8 @@ def login(error = None):
                 ('JRL 10Tooth Clutch Gear Drive Sprocket','$5.99'),
                 ('Ultegra FC-R8000 Crankset','$289.99')''')
         conn.commit()
+
+        cur.execute('DROP TABLE IF EXISTS parttabel;')
 
         cur.execute('''
                 CREATE TABLE parttabel (
